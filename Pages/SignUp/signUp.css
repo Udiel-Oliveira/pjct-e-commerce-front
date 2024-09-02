@@ -9,7 +9,9 @@
     /* Diversos */
     box-sizing: border-box;
 }
-
+input:focus {
+    outline: none;
+}
 body {
     /* Configurações do modelo de caixa */
     width: 100%;
@@ -57,13 +59,18 @@ form {
     /* Configurações de exibição */
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-
+.form_content
+{
+    width: 80%;
+}
 .inputs {
     /* Configurações do modelo de caixa */
     margin-bottom: 35px;
     padding: 15px;
     border: none;
+    width: 100%;
     border: 3px solid #4F4E53;
     border-radius: 20px;
     background-color: #202020;
@@ -102,6 +109,7 @@ button {
     /* Configurações do modelo de caixa */
     padding: 20px;
     border: none;
+    width: 80%;
     border-radius: 15px;
     background-color: #6100FF;
     /* Configurações de tipografia */
