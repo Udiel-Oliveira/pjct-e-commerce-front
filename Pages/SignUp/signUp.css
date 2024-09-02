@@ -1,168 +1,228 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-*{
-    padding: 0;
+* {
+    /* Configurações do modelo de caixa */
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
+    /* Configurações de tipografia */
     font-family: "Inter", system-ui;
+    /* Diversos */
+    box-sizing: border-box;
 }
-body{
-    background-image: url(/assets/images/grid\ 2.svg);
+
+body {
+    /* Configurações do modelo de caixa */
+    width: 100%;
+    height: 100%;
     background-color: #0F0F11;
-    color: white;
+    background-image: url(/assets/images/grid\ 2.svg);
     background-repeat: repeat;
     background-size: 100%;
-    height: 100%;
-    width: 100%;
+    /* Configurações de tipografia */
+    color: white;
 }
-section{
-    width: 100%;
+
+section {
+    /* Configurações de exibição */
     display: flex;
+    justify-content: space-between;
+    /* Configurações do modelo de caixa */
+    width: 100%;
     height: 100vh;
     padding: 50px;
+    /* Diversos */
     gap: 5rem;
-    justify-content: space-between;
 }
-.forms{
+
+.forms {
+    /* Configurações de exibição */
     display: flex;
-    flex-direction: column;
-    height: 100%;
     flex: 1;
+    flex-direction: column;
     justify-content: space-between;
+    /* Configurações do modelo de caixa */
+    height: 100%;
 }
-#titulo{
+
+#titulo {
+    /* Configurações de exibição */
     display: flex;
-    gap: 2rem;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    /* Diversos */
+    gap: 2rem;
 }
-form{
+
+form {
+    /* Configurações de exibição */
     display: flex;
     flex-direction: column;
 }
-.inputs{
+
+.inputs {
+    /* Configurações do modelo de caixa */
     margin-bottom: 35px;
-    border: none;
-    background-color: #202020;
-    border: 3px solid #4F4E53;
-    color: #ffffff;
     padding: 15px;
-    border-radius: 20px;
-    font-size: 15px;
-}
-#senha_inp{
-    width: 100%;
-}
-#terms{
-    display: flex;
-    gap: 10px;
-    margin-bottom: 35px;
-}
-#signup{
-    display: flex;
-    justify-content: center;
-}
-#propaganda 
-{
-    width: 100%;
-    height: 100vh;
-}
-button{
-    text-transform: uppercase;
-    padding: 20px;
     border: none;
-    border-radius: 15px;
-    font-weight: bold;
+    border: 3px solid #4F4E53;
+    border-radius: 20px;
+    background-color: #202020;
+    /* Configurações de tipografia */
     font-size: 15px;
-    background-color: #6100FF;
-    cursor: pointer;
     color: #ffffff;
 }
 
+#senha_inp {
+    /* Configurações do modelo de caixa */
+    width: 100%;
+}
+
+#terms {
+    /* Configurações de exibição */
+    display: flex;
+    /* Configurações do modelo de caixa */
+    margin-bottom: 35px;
+    /* Diversos */
+    gap: 10px;
+}
+
+#signup {
+    /* Configurações de exibição */
+    display: flex;
+    justify-content: center;
+}
+
+#propaganda {
+    /* Configurações do modelo de caixa */
+    width: 100%;
+    height: 100vh;
+}
+
+button {
+    /* Configurações do modelo de caixa */
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: #6100FF;
+    /* Configurações de tipografia */
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Diversos */
+    cursor: pointer;
+}
+
 input[name="terms"] {
+    /* Configurações de posicionamento */
     position: absolute;
+    /* Configurações de manipulação */
     opacity: 0;
+    /* Diversos */
     cursor: pointer;
 }
 
 .checkmark {
-    position: relative;
+    /* Configurações de exibição */
     display: flex;
     align-items: center;
-    cursor: pointer;
+    /* Configurações de posicionamento */
+    position: relative;
+    /* Configurações de tipografia */
     font-size: 16px;
+    /* Diversos */
+    cursor: pointer;
 }
 
 .checkmark::before {
+    /* Configurações de exibição */
     content: "";
     display: inline-block;
+    /* Configurações do modelo de caixa */
     width: 20px;
     height: 20px;
+    margin-right: 10px;
     border: 2px solid #ffffff;
     border-radius: 4px;
-    margin-right: 10px;
+    /* Configurações de manipulação */
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 input[name="terms"]:checked + .checkmark::before {
-    background-color: #6100FF;
+    /* Configurações do modelo de caixa */
     border-color: #6100FF;
+    background-color: #6100FF;
 }
 
 input[name="terms"]:checked + .checkmark::after {
+    /* Configurações de exibição */
     content: "";
+    /* Configurações de posicionamento */
     position: absolute;
     left: 7px;
     top: 3px;
+    /* Configurações do modelo de caixa */
     width: 6px;
     height: 11px;
     border: solid white;
     border-width: 0 3px 3px 0;
+    /* Configurações de manipulação */
     transform: rotate(45deg);
 }
 
 .checkmark h4 {
+    /* Configurações do modelo de caixa */
     margin: 0;
 }
 
 .checkmark strong {
-    color: #FFFFFF;
+    /* Configurações de tipografia */
     text-decoration: underline;
+    color: #FFFFFF;
+    /* Diversos */
     cursor: pointer;
 }
 
 .select-container {
+    /* Configurações de exibição */
     display: flex;
     flex-direction: column;
+    /* Configurações de tipografia */
     font-family: Arial, sans-serif;
 }
 
 .select-container label {
+    /* Configurações do modelo de caixa */
     margin-bottom: 10px;
+    /* Configurações de tipografia */
     font-size: 16px;
     color: #333;
 }
 
 .select-container select {
+    /* Configurações do modelo de caixa */
+    width: 100%;
+    margin-bottom: 35px;
+    padding: 15px;
+    border: none;
+    border: 3px solid #4F4E53;
+    border-radius: 20px;
+    outline: none;
+    background-color: #202020;
+    /* Configurações de tipografia */
+    font-size: 16px;
+    color: #ffffff;
+    /* Configurações de manipulação */
+    transition: border-color 0.3s ease;
+    /* Diversos */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 100%;
-    font-size: 16px;
-    border-radius: 20px;
-    color: #ffffff;
     cursor: pointer;
-    padding: 15px;
-    outline: none;
-    transition: border-color 0.3s ease;
-    margin-bottom: 35px;
-    border: none;
-    background-color: #202020;
-    border: 3px solid #4F4E53;
 }
 
 .select-container select {
+    /* Configurações do modelo de caixa */
     background-color: #202020;
     background-size: 10px;
 }
-
