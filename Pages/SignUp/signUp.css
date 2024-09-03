@@ -36,7 +36,7 @@ section {
     gap: 5rem;
 }
 
-.forms {
+.form_container {
     /* Configurações de exibição */
     display: flex;
     flex: 1;
@@ -46,7 +46,7 @@ section {
     height: 100%;
 }
 
-#titulo {
+.signIn_header {
     /* Configurações de exibição */
     display: flex;
     align-items: center;
@@ -65,7 +65,7 @@ form {
 {
     width: 80%;
 }
-.inputs {
+.input_field {
     /* Configurações do modelo de caixa */
     margin-bottom: 35px;
     padding: 15px;
@@ -78,13 +78,7 @@ form {
     font-size: 15px;
     color: #ffffff;
 }
-
-#senha_inp {
-    /* Configurações do modelo de caixa */
-    width: 100%;
-}
-
-#terms {
+#terms_section {
     /* Configurações de exibição */
     display: flex;
     /* Configurações do modelo de caixa */
@@ -93,7 +87,7 @@ form {
     gap: 10px;
 }
 
-#signup {
+#login_link {
     /* Configurações de exibição */
     display: flex;
     justify-content: center;
@@ -105,7 +99,7 @@ form {
     height: 100vh;
 }
 
-button {
+.submit_button {
     /* Configurações do modelo de caixa */
     padding: 20px;
     border: none;

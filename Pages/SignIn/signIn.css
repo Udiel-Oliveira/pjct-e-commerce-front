@@ -25,7 +25,7 @@ body {
     color: white;
 }
 
-section {
+section, .login-section {
     /* Configurações de exibição */
     display: flex;
     justify-content: space-between;
@@ -37,7 +37,7 @@ section {
     gap: 5rem;
 }
 
-.forms {
+.login_container {
     /* Configurações de exibição */
     display: flex;
     flex: 1;
@@ -47,7 +47,7 @@ section {
     height: 100%;
 }
 
-#titulo {
+.login_header {
     /* Configurações de exibição */
     display: flex;
     align-items: center;
@@ -66,7 +66,7 @@ form {
 {
     width: 80%;
 }
-.inputs {
+.input_field {
     /* Configurações do modelo de caixa */
     margin-bottom: 35px;
     padding: 15px;
@@ -79,13 +79,13 @@ form {
     font-size: 15px;
     color: #ffffff;
 }
-#signup {
+#signup_link {
     /* Configurações de exibição */
     display: flex;
     justify-content: center;
 }
 
-button {
+.submit_button {
     /* Configurações do modelo de caixa */
     padding: 20px;
     border: none;
@@ -101,7 +101,7 @@ button {
     cursor: pointer;
 }
 
-.Container_google {
+.google_container {
     /* Configurações de exibição */
     display: flex;
     flex-direction: column;
@@ -113,13 +113,12 @@ button {
     gap: 2rem;
 }
 
-.loginGoogle {
+.google_login {
     /* Configurações de exibição */
     display: flex;
     align-items: center;
     justify-content: space-around;
     /* Configurações do modelo de caixa */
-    width: 50%;
     padding: 10px;
     border-radius: 25px;
     background-color: #ffffff;
@@ -127,7 +126,7 @@ button {
     color: #000000;
 }
 
-.loginGoogle img {
+.google_login img {
     /* Configurações do modelo de caixa */
     width: 10%;
 }

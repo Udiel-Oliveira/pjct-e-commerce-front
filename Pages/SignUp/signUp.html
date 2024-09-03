@@ -8,15 +8,15 @@
 </head>
 <body>
     <section>
-        <div class="forms"> 
-            <div id="titulo">
-                <img src="/assets/icons/SignUpIcon.svg" alt="">
+        <div class="form_container"> 
+            <div class="signIn_header">
+                <img src="/assets/icons/SignUpIcon.svg" alt="Ícone de Cadastro">
                 <h1>Criar Conta</h1>
             </div>
             <form action="" method="">
                 <div class="form_content">
                     <div class="select-container">
-                        <select id="games" name="countries" required size="1">
+                        <select id="country_select" name="countries" required size="1">
                          <option value="afghanistan">Afghanistan</option>
                          <option value="albania">Albania</option>
                          <option value="algeria">Algeria</option>
@@ -103,28 +103,26 @@
                          <option value="portugal">Portugal</option>
                          </select>
                      </div>
-                     <input name="email" type="email" placeholder="Endereço de E-mail" class="inputs" required>
-                     <input name="nome" type="text" placeholder="Nome ou Nikname" class="inputs" required>
-                     <input name="senha" type="password" placeholder="Senha" class="inputs" required>
+                     <input name="email" type="email" placeholder="Endereço de E-mail" class="input_field" required>
+                     <input name="nome" type="text" placeholder="Nome ou Nikname" class="input_field" required>
+                     <input name="senha" type="password" placeholder="Senha" class="input_field" required>
                 </div>
                 
 
-                <div id="terms">
-                    <input name="terms" type="checkbox" id="termsCheckbox" required>
-                    <label for="termsCheckbox" class="checkmark">
+                <div id="terms_section">
+                    <input name="terms" type="checkbox" id="terms_checkbox" required>
+                    <label for="terms_checkbox" class="checkmark">
                         <h4>Eu li e concordo com os <strong>Termos de serviço</strong></h4>
                     </label>
                 </div>
     
-                <button type="submit">Continuar</button>
+                <button type="submit" class="submit_button">Continuar</button>
                 
             </form>
-            <div id="signup"><h4>Já tem uma conta? <strong>Entrar</strong></h4></div>
+            <div id="login_link"><h4>Já tem uma conta? <strong>Entrar</strong></h4></div>
         </div>
         <img src="/assets/images/Propaganda.svg" alt="">
-        
-    </section>
-    
-    
+
+    </section> 
 </body>
 </html>
