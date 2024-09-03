@@ -228,3 +228,50 @@ input[name="terms"]:checked + .checkmark::after {
     background-color: #202020;
     background-size: 10px;
 }
+
+@media (max-width: 600px) {
+
+#prop{
+    display: none;
+}
+.form_content
+{
+    width: 100%;
+}
+.submit_button{
+    width: 100%;
+}
+}
+
+@media (max-width: 376px) {
+section{
+    padding: 30px;
+}    
+.submit_button{
+    width: 100%;
+}
+.select-container select{
+    padding: 10px;
+    border-radius: 15px;
+}
+.input_field{
+    padding: 10px;
+    border-radius: 15px;
+}
+.checkmark::before{
+    width: 15px;
+    height: 15px;
+}
+input[name="terms"]:checked + .checkmark::after{
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+}
+#login_link h4{
+    font-size: 13px;
+}
+.checkmark{
+    font-size: 13px;
+}
+}
