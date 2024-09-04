@@ -96,7 +96,13 @@ form {
     display: flex;
     justify-content: center;
 }
-
+#login_link a, .checkmark a{
+    text-decoration: none;
+    color: #ffffff;
+}
+#login_link strong, .checkmark strong{
+    text-decoration: underline;
+}
 #propaganda {
     /* Configurações do modelo de caixa */
     width: 100%;
@@ -181,13 +187,6 @@ input[name="terms"]:checked + .checkmark::after {
     margin: 0;
 }
 
-.checkmark strong {
-    /* Configurações de tipografia */
-    text-decoration: underline;
-    color: #FFFFFF;
-    /* Diversos */
-    cursor: pointer;
-}
 
 .select-container {
     /* Configurações de exibição */
