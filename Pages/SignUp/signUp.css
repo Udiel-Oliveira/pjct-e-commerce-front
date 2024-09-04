@@ -35,7 +35,11 @@ section {
     /* Diversos */
     gap: 5rem;
 }
-
+.item2
+{
+    display: flex;
+    flex: 1;
+}
 .form_container {
     /* Configurações de exibição */
     display: flex;
@@ -229,9 +233,122 @@ input[name="terms"]:checked + .checkmark::after {
     background-size: 10px;
 }
 
+@media (max-width: 1280px) {
+    .signIn_header{
+        font-size: 15px;
+    }
+    .signIn_header img{
+        width: 10%;
+    }
+    .select-container select{
+        margin-bottom: 25px;
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 15px;
+    }
+    .input_field{
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    .checkmark h4, #login_link{
+        font-size: 14px;
+    }
+    .form_content{
+        width: 100%;
+    }
+    .submit_button{
+        padding: 15px;
+        width: 100%;
+        border-radius: 15px;
+        font-size: 15px;
+    }
+}
+@media (max-width: 1024px) {
+    .signIn_header{
+        font-size: 15px;
+    }
+    .signIn_header img{
+        width: 5%;
+    }
+    .select-container select{
+        margin-bottom: 0px;
+        padding: 25px;
+        border-radius: 15px;
+        font-size: 18px;
+    }
+    .input_field{
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .checkmark h4, #login_link{
+        font-size: 20px;
+    }
+    .form_content{
+        width: 100%;
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 35px;
+        flex-direction: column;
+    }
+    .submit_button{
+        padding: 25px;
+        width: 100%;
+        border-radius: 15px;
+        font-size: 20px;
+    }
+    section{
+        height: none;
+        flex-direction: column;
+    }
+    #prop{
+        width: 100%;
+    }
+    .form_container{
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 860px) {
+
+#prop, .item2{
+    display: none;
+}
+.form_content
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 35px;
+}
+.input_field{
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0px;
+    font-size: 18px;
+}
+.select-container select{
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0px;
+}
+.submit_button{
+    width: 100%;
+    padding: 25px;
+}
+.checkmark, #login_link h4{
+    font-size: 18px;
+}
+
+}
+
 @media (max-width: 600px) {
 
-#prop{
+#prop,.item2{
     display: none;
 }
 .form_content
