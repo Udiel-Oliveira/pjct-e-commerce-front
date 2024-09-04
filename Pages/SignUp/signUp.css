@@ -233,24 +233,22 @@ input[name="terms"]:checked + .checkmark::after {
     background-size: 10px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1280px) and (min-width: 1024px) {
     .signIn_header{
         font-size: 15px;
     }
     .signIn_header img{
-        width: 10%;
+        width: 8%;
     }
     .select-container select{
-        margin-bottom: 25px;
-        padding: 10px;
-        border-radius: 15px;
-        font-size: 15px;
+        margin-bottom: 20px;
     }
-    .input_field{
-        padding: 10px;
+    .input_field,.select-container select, .submit_button{
+        padding: 15px;
         border-radius: 15px;
-        font-size: 15px;
-        margin-bottom: 25px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        width: 100%;
     }
     .checkmark h4, #login_link{
         font-size: 14px;
@@ -258,14 +256,14 @@ input[name="terms"]:checked + .checkmark::after {
     .form_content{
         width: 100%;
     }
-    .submit_button{
-        padding: 15px;
-        width: 100%;
-        border-radius: 15px;
-        font-size: 15px;
+    .form_container{
+        gap: 1rem;
+    }
+    section{
+        gap: 2rem;
     }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 860px) and (min-height: 1366px) {
     .signIn_header{
         font-size: 15px;
     }
@@ -301,7 +299,7 @@ input[name="terms"]:checked + .checkmark::after {
         font-size: 20px;
     }
     section{
-        height: none;
+        height: fit-content;
         flex-direction: column;
     }
     #prop{
@@ -312,83 +310,93 @@ input[name="terms"]:checked + .checkmark::after {
     }
 }
 
-@media (max-width: 860px) {
-
-#prop, .item2{
-    display: none;
-}
-.form_content
-{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    margin-bottom: 35px;
-}
-.input_field{
-    padding: 20px;
-    border-radius: 15px;
-    margin: 0px;
-    font-size: 18px;
-}
-.select-container select{
-    padding: 20px;
-    border-radius: 15px;
-    margin: 0px;
-}
-.submit_button{
-    width: 100%;
-    padding: 25px;
-}
-.checkmark, #login_link h4{
-    font-size: 18px;
-}
-
+@media (max-width: 860px) and (min-width: 600px) {
+    #prop, .item2{
+        display: none;
+    }
+    .form_content
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-bottom: 35px;
+    }
+    .input_field{
+        padding: 20px;
+        border-radius: 15px;
+        margin: 0px;
+        font-size: 18px;
+    }
+    .select-container select{
+        padding: 20px;
+        border-radius: 15px;
+        margin: 0px;
+    }
+    .submit_button{
+        width: 100%;
+        padding: 25px;
+    }
+    .checkmark, #login_link h4{
+        font-size: 18px;
+    }
 }
 
-@media (max-width: 600px) {
-
-#prop,.item2{
-    display: none;
-}
-.form_content
-{
-    width: 100%;
-}
-.submit_button{
-    width: 100%;
-}
+@media (max-width: 600px) and (min-width: 376px) {
+    #prop,.item2{
+        display: none;
+    }
+    .form_content
+    {
+        width: 100%;
+    }
+    .submit_button{
+        width: 100%;
+    }
+    section{
+        padding: 30px;
+    }
 }
 
 @media (max-width: 376px) {
-section{
-    padding: 30px;
-}    
-.submit_button{
-    width: 100%;
+    section{
+        padding: 30px;
+    }    
+    .item2{
+        display: none;
+    }
+    .submit_button{
+        width: 100%;
+        padding: 12px;
+    }
+    .select-container select{
+        padding: 10px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+    .input_field{
+        padding: 10px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+    .checkmark::before{
+        width: 15px;
+        height: 15px;
+    }
+    input[name="terms"]:checked + .checkmark::after{
+        left: 6px;
+        top: 2px;
+        width: 4px;
+        height: 9px;
+    }
+    #login_link h4{
+        font-size: 13px;
+    }
+    .checkmark{
+        font-size: 13px;
+    }
+    .form_content{
+        width: 100%;
+    }
 }
-.select-container select{
-    padding: 10px;
-    border-radius: 15px;
-}
-.input_field{
-    padding: 10px;
-    border-radius: 15px;
-}
-.checkmark::before{
-    width: 15px;
-    height: 15px;
-}
-input[name="terms"]:checked + .checkmark::after{
-    left: 6px;
-    top: 2px;
-    width: 4px;
-    height: 9px;
-}
-#login_link h4{
-    font-size: 13px;
-}
-.checkmark{
-    font-size: 13px;
-}
-}
+
