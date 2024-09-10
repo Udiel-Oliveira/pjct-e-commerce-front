@@ -1,3 +1,3 @@
 # pjct-e-commerce-front
 # opa
-# opa, dnv so pra rir
+# opa, dnv so para rir
