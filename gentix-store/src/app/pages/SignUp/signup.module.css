@@ -181,29 +181,29 @@
 
 
 @media (max-width: 1280px) and (min-width: 1024px) {
-    .signIn_header{
+    .signInHeader{
         font-size: 15px;
     }
-    .signIn_header img{
+    .signInHeader img{
         width: 8%;
     }
-    .select-container select{
+    .selectContainer select{
         margin-bottom: 20px;
     }
-    .input_field,.select-container select, .submit_button{
+    .inputField,.selectContainer select, .submitButton{
         padding: 15px;
         border-radius: 15px;
         font-size: 18px;
         margin-bottom: 20px;
         width: 100%;
     }
-    .checkmark h4, #login_link{
+    .checkmark h4, .loginLink{
         font-size: 14px;
     }
-    .form_content{
+    .formContent{
         width: 100%;
     }
-    .form_container{
+    .formContainer{
         gap: 1rem;
     }
     .container{
@@ -211,19 +211,19 @@
     }
 }
 @media (max-width: 1024px) and (min-width: 860px) and (min-height: 1366px) {
-    .signIn_header{
+    .signInHeader{
         font-size: 15px;
     }
-    .signIn_header img{
+    .signInHeader img{
         width: 5%;
     }
-    .select-container select{
+    .selectContainer select{
         margin-bottom: 0px;
         padding: 25px;
         border-radius: 15px;
         font-size: 18px;
     }
-    .input_field{
+    .inputField{
         padding: 20px;
         border-radius: 15px;
         font-size: 18px;
@@ -232,14 +232,14 @@
     .checkmark h4, #login_link{
         font-size: 20px;
     }
-    .form_content{
+    .formContent{
         width: 100%;
         display: flex;
         gap: 3rem;
         margin-bottom: 35px;
         flex-direction: column;
     }
-    .submit_button{
+    .submitButton{
         padding: 25px;
         width: 100%;
         border-radius: 15px;
@@ -252,7 +252,7 @@
     #prop{
         width: 100%;
     }
-    .form_container{
+    .formContainer{
         gap: 2.5rem;
     }
 }
@@ -261,7 +261,7 @@
     #prop, .item2{
         display: none;
     }
-    .form_content
+    .formContent
     {
         width: 100%;
         display: flex;
@@ -269,18 +269,18 @@
         gap: 3rem;
         margin-bottom: 35px;
     }
-    .input_field{
+    .inputField{
         padding: 20px;
         border-radius: 15px;
         margin: 0px;
         font-size: 18px;
     }
-    .select-container select{
+    .selectContainer select{
         padding: 20px;
         border-radius: 15px;
         margin: 0px;
     }
-    .submit_button{
+    .submitButton{
         width: 100%;
         padding: 25px;
     }
@@ -293,11 +293,11 @@
     #prop,.item2{
         display: none;
     }
-    .form_content
+    .formContent
     {
         width: 100%;
     }
-    .submit_button{
+    .submitButton{
         width: 100%;
     }
     .container{
@@ -312,16 +312,16 @@
     .item2{
         display: none;
     }
-    .submit_button{
+    .submitButton{
         width: 100%;
         padding: 12px;
     }
-    .select-container select{
+    .selectContainer select{
         padding: 10px;
         border-radius: 15px;
         margin-bottom: 15px;
     }
-    .input_field{
+    .inputField{
         padding: 10px;
         border-radius: 15px;
         margin-bottom: 15px;
@@ -342,7 +342,7 @@
     .checkmark{
         font-size: 13px;
     }
-    .form_content{
+    .formContent{
         width: 100%;
     }
 }
