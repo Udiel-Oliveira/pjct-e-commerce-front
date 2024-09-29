@@ -1,9 +1,8 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./signIn.module.css";
 import Link from "next/link";
-import SignUp from "./pages/SignUp/page";
 
-export default function Home() {
+export default function SignIn() {
   return (
     <div className={styles.page}>
       <Link href={"./pages/SignUp"}>opa</Link>
