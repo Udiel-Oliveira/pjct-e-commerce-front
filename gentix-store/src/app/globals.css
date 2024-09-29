@@ -3,6 +3,33 @@
   --foreground: #171717;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent; /* Para dispositivos Android */
+  outline: none; /* Remove o foco */
+  border: none; /* Remove borda, se necessário */
+}
+
+/* Remove o foco e o estilo padrão para botões e links */
+button, a, input, textarea {
+  outline: none; /* Remove o contorno */
+  border: none; /* Remove a borda, se necessário */
+  background: none; /* Remove o fundo, se necessário */
+}
+
+/* Se quiser remover o foco apenas em dispositivos móveis */
+button:focus, a:focus, input:focus, textarea:focus {
+  outline: none; /* Remove o contorno quando em foco */
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  outline: none;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -32,6 +59,7 @@ body {
   padding: 0;
   font-family: "Inter", system-ui;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Para dispositivos Android */
 }
 
 a {

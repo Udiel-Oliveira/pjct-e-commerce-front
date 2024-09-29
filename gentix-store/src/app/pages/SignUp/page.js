@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './signup.module.css';
+import "../../globals.css"
 
 const inter = Inter({
   subsets: ['latin'],
