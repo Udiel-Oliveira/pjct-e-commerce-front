@@ -5,6 +5,9 @@ import Link from "next/link";
 const SignIn = () => {
     return (
       <section className={styles.loginSection}>
+        <div className={styles.item2}>
+          <img src="/assets/Propaganda2.svg" id="prop" alt="Propaganda contendo vários jogos, Minecraft, Pokemon, Super Mario Bros" />
+        </div>
         <div className={styles.loginContainer}>
           <div className={styles.loginHeader}>
             <img src="/assets/EntrarIcon.svg" alt="Ícone de Entrar" />
@@ -49,9 +52,7 @@ const SignIn = () => {
             </Link>
           </div>
         </div>
-        <div className={styles.item2}>
-          <img src="/assets/Propaganda2.svg" id="prop" alt="Propaganda contendo vários jogos, Minecraft, Pokemon, Super Mario Bros" />
-        </div>
+        
       </section>
     );
   };
