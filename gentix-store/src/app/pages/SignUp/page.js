@@ -107,7 +107,7 @@ const SignUp = () => {
           </form>
 
           <div className={styles.loginLink}>
-            <Link href="./pages/SignIn">
+            <Link href="./SignIn">
               <h4>Já tem uma conta? <strong>Entrar</strong></h4>
             </Link>
           </div>

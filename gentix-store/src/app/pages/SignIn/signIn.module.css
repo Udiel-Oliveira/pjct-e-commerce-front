@@ -1,0 +1,268 @@
+.loginSection {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    background-color: #0f0f11;
+    background-image: url('/assets/background.svg');
+    background-repeat: repeat;
+    background-size: 100%;
+    color: white;
+    gap: 5rem;
+  }
+  
+  .item2 {
+    display: flex;
+    flex: 1;
+  }
+  
+  .loginContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .loginHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .formContent {
+    width: 80%;
+  }
+  
+  .inputField {
+    margin-bottom: 35px;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    border: 3px solid #4f4e53;
+    border-radius: 20px;
+    background-color: #202020;
+    font-size: 15px;
+    color: #ffffff;
+  }
+  
+  #signupLink {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #signupLink a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  #signupLink strong {
+    text-decoration: underline;
+  }
+  
+  .submitButton {
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    width: 80%;
+    background-color: #6100ff;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .googleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+  }
+  
+  .googleLogin {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .googleLogin img {
+    width: 10%;
+  }
+  
+  @media (max-width: 1280px) and (min-width: 1023px) {
+    .loginHeader {
+      font-size: 15px;
+    }
+  
+    .loginHeader img {
+      width: 8%;
+    }
+  
+    .inputField, .submitButton {
+      padding: 15px;
+      border-radius: 15px;
+      font-size: 18px;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+  
+    #signupLink h4 {
+      font-size: 14px;
+    }
+  
+    .formContent {
+      width: 100%;
+    }
+  
+    .loginSection {
+      gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 1024px) and (min-width: 860px) and (min-height: 1366px) {
+    .loginHeader {
+      font-size: 15px;
+    }
+  
+    .loginHeader img {
+      width: 5%;
+    }
+  
+    .inputField {
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+  
+    .googleLogin {
+      font-size: 18px;
+      padding: 20px;
+      margin-top: 2rem;
+      border-radius: 55px;
+    }
+  
+    #signupLink {
+      font-size: 20px;
+    }
+  
+    .formContent {
+      width: 80%;
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+      flex-direction: column;
+    }
+  
+    .submitButton {
+      padding: 25px;
+      width: 80%;
+      border-radius: 15px;
+      font-size: 20px;
+      margin-bottom: 2rem;
+    }
+  
+    .loginSection {
+      height: fit-content;
+      flex-direction: column;
+    }
+  
+    .item2 {
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #prop {
+      width: 100%;
+    }
+  
+    .loginContainer {
+      gap: 3rem;
+    }
+  }
+  
+  @media (max-width: 860px) and (min-width: 600px) {
+    #prop, .item2 {
+      display: none;
+    }
+  
+    .formContent {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-bottom: 35px;
+    }
+  
+    .inputField {
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+  
+    .submitButton {
+      width: 100%;
+      padding: 25px;
+    }
+  
+    #signupLink h4 {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 600px) and (min-width: 376px) {
+    #prop, .item2 {
+      display: none;
+    }
+  
+    .formContent {
+      width: 100%;
+    }
+  
+    .submitButton {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 376px) {
+    .loginSection {
+      padding: 30px;
+    }
+  
+    .formContent {
+      width: 100%;
+    }
+  
+    .item2 {
+      display: none;
+    }
+  
+    .submitButton {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    .inputField {
+      padding: 10px;
+      border-radius: 15px;
+    }
+  
+    #signupLink h4 {
+      font-size: 13px;
+    }
+}
