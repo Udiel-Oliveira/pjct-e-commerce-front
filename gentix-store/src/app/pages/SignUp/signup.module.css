@@ -37,9 +37,6 @@
   justify-content: center;
   gap: 2rem;
 }
-.signInHeader  img{
-    width: 6%;
-}
 
 .form {
   display: flex;
