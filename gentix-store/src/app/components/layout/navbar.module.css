@@ -1,5 +1,37 @@
-.navBar{
+.nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+   align-items: center;
+   
+    height: 4.5rem;
 }
-.part1{
+
+.links{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo{
+    margin-left: 2rem;
+
+}
+.user{
+    margin-right: 2rem;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+}
+.list li{
+ margin-inline: 2rem;
+    text-decoration: none;
+    color: #ffff;
+
 
 }

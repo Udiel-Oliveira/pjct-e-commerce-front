@@ -1,33 +1,45 @@
 import Link from "next/link"
 import styles from './navbar.module.css'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 export default function NavBar(){
 
     return(
-        <nav className={styles.NavBar}>
+        <nav className={styles.nav}>
 
-            <div>
 
-            <div>
-            <Link href={"./pages/SignUp"}>
-            <img src="/assets/logoHome.png" width="30" height="30" alt="logo-home"></img>
+            
+                
+  
+            <div className={styles.links}>
+                <div className={styles.logo}>
+                <Link href={"./pages/SignUp"}>
+            <img src="/assets/logoHome.png" width="35" height="35" margim-Left="2rem" alt="logo-home"></img>
             </Link>
-            </div>
-              
-            <ul>
-                <li ><Link href={"./pages/SignUp"}>Games</Link></li>
-                <li><Link  href={"./pages/SignUp"}>Store</Link></li>
+                </div>
+
+            
+            <ul className={styles.list}>
+            <li ><Link href={"./pages/SignUp"}>Games</Link></li>
+            <li><Link  href={"./pages/SignUp"}>Store</Link></li>
+            <li><Link  href={"./pages/SignUp"}>Store</Link></li>
+            <li><Link  href={"./pages/SignUp"}>Store</Link></li>
             </ul>
             </div>
+            <div className={styles.user}>
 
-
-            <div>
-            <ul>
-                <li> <Link  href={"./pages/SignUp"}>Biblioteca</Link></li>
-                <li><Link  href={"./pages/SignUp"}>Notificações</Link></li>
-                <li><Link  href={"./pages/SignUp"}>User</Link></li>
-            </ul>
+           <Link  href={"./pages/SignUp"}> <FontAwesomeIcon icon={faUser} style={{ width: '23', height: '23' }} /></Link>
+           
+        
             </div>
+          
+            
+
+            
+
+
+            
+          
             
         </nav>
     )
