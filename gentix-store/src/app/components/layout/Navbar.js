@@ -1,7 +1,7 @@
 import Link from "next/link"
 import styles from './navbar.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faWallet } from '@fortawesome/free-solid-svg-icons';
 export default function NavBar(){
 
     return(
@@ -20,10 +20,9 @@ export default function NavBar(){
 
             
             <ul className={styles.list}>
-            <li ><Link href={"./pages/SignUp"}>Games</Link></li>
-            <li><Link  href={"./pages/SignUp"}>Store</Link></li>
-            <li><Link  href={"./pages/SignUp"}>Store</Link></li>
-            <li><Link  href={"./pages/SignUp"}>Store</Link></li>
+            <li ><Link href={"./pages/SignUp"}>Jogos</Link></li>
+            <li><Link  href={"./pages/SignUp"}>Loja</Link></li>
+
             </ul>
             </div>
             <div className={styles.user}>
