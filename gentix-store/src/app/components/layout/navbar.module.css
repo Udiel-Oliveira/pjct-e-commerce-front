@@ -3,31 +3,37 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-   align-items: center;
-   
-    height: 4.5rem;
+    align-items: center;
+    padding: 15px 2rem;
 }
-
-
 .links{
-    
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-
-.logo{
-    margin-left: 2rem;
-
+.linkItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 .user{
-    margin-right: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
+
+.logo img{
+    width: 60%;
+}
+
 
 .list{
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .list li{
  margin-inline: 2rem;
@@ -36,3 +42,17 @@
 
 
 }
+.searchInput{
+    width: 300px;
+    display: flex;
+    background-color: #201F24;
+    border-radius: 500px;
+    padding: 10px 20px;
+    justify-content: flex-start;
+    font-size: 18px;
+}
+.searchInput input{
+    border: none;
+    padding-left: 20px;
+}
+

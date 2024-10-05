@@ -6,41 +6,47 @@ export default function NavBar(){
 
     return(
         <nav className={styles.nav}>
-
-
             
-                
-  
-            <div className={styles.links}>
-                <div className={styles.logo}>
 
-                <Link href={"./pages/SignUp"}>
-            <img src="/assets/logoHome.png" width="35" height="35" margim-Left="2rem" alt="logo-home"></img>
-            </Link>
-                </div>
-
-            
             <ul className={styles.list}>
-            <li ><Link href={"./pages/SignUp"}>Jogos</Link></li>
-            <input type="text" />
-            <li><Link  href={"./pages/SignUp"}>Loja</Link></li>
+
+            <Link href="./SignIn" className={styles.logo}>
+                <img src="/assets/logoHome.png" alt="" />
+            </Link>
+
+        
+            <li className={styles.link}>
+                <Link href={"./pages/SignUp"} className={styles.linkItem}>
+                    <img src="/assets/Xbox_Icon.svg"/>
+                    Jogos
+                </Link>
+            </li>
+
+            <div className={styles.searchInput}>
+                <img src="/assets/lupa.svg" alt=""/>
+                <input type="text"
+                placeholder="Pesquisar..." 
+                />
+            </div>
 
             </ul>
-            </div>
+    
             <div className={styles.user}>
-
-           <Link  href={"./pages/SignUp"}> <FontAwesomeIcon icon={faUser} style={{ width: '23', height: '23' }} /></Link>
-           
-        
+            <div>
+               <Link href={"./pages/SignUp"} className={styles.linkItem}>
+                    <img src="/assets/Store_Icon.svg" alt="" />
+                    Loja
+               </Link> 
             </div>
-          
-            
+            <div>
+               <Link href={"./pages/SignUp"} className={styles.linkItem}>
+                    <img src="/assets/Biblioteca_Icon.svg" alt="" />
+                    Biblioteca
+               </Link> 
+            </div>
 
-            
-
-
-            
-          
+                <Link  href={"./pages/SignUp"}> <FontAwesomeIcon icon={faUser} style={{ width: '23', height: '23' }} /></Link>    
+            </div>
             
         </nav>
     )

@@ -7,13 +7,8 @@ import NavBar from '@/app/components/layout/Navbar';
 
 export default function Home() {
   return (
-    <div className={styles.pag}>
-      <NavBar/>
-      <Link href={"./pages/SignUp/"}>opa</Link>
-      
-     
-  
-
+    <div className={styles.page}>
+      <NavBar/>              
     </div>
   );
 }
