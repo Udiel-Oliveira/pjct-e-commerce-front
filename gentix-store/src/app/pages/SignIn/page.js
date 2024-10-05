@@ -39,10 +39,12 @@ const SignIn = () => {
             </span>
             <br />
             <div className={styles.googleContainer}>
-              <button className={styles.googleLogin}>
-                <img src="/assets/Google_icon.svg" alt="Logo do Google" />
-                <h4>Continuar com o Google</h4>
-              </button>
+              <Link href={"/"}>
+                <button className={styles.googleLogin}>
+                  <img src="/assets/Google_icon.svg" alt="Logo do Google" />
+                  <h4>Continuar com o Google</h4>
+                </button>
+              </Link>
             </div>
           </form>
   
