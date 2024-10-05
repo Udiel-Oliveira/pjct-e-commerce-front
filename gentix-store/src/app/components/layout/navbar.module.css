@@ -14,8 +14,9 @@
 .linkItem{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 1rem;
+    position: relative;
 }
 .user{
     display: flex;
@@ -65,3 +66,18 @@
     align-items: center;
 }
 
+.iconConteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.activeDot {
+    position: absolute;
+    top: 130%;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
