@@ -13,6 +13,7 @@ export default function NavBar(){
   
             <div className={styles.links}>
                 <div className={styles.logo}>
+
                 <Link href={"./pages/SignUp"}>
             <img src="/assets/logoHome.png" width="35" height="35" margim-Left="2rem" alt="logo-home"></img>
             </Link>
@@ -21,6 +22,7 @@ export default function NavBar(){
             
             <ul className={styles.list}>
             <li ><Link href={"./pages/SignUp"}>Jogos</Link></li>
+            <input type="text" />
             <li><Link  href={"./pages/SignUp"}>Loja</Link></li>
 
             </ul>
