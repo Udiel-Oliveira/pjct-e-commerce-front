@@ -13,7 +13,7 @@ export default function NavBar() {
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
-        <Link href="/SignIn" className={styles.logo}>
+        <Link href="/pages/SignIn" className={styles.logo}>
           <img src="/assets/logoHome.png" alt="" />
         </Link>
 

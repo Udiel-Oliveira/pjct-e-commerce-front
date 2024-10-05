@@ -5,6 +5,9 @@ import styles from "../Biblioteca/biblioteca.module.css"
 export default function Home() {
   return (
     <div className={styles.page}>
+      <Head>
+        <title>Biblioteca | KumStore</title>
+      </Head>
       <NavBar/>             
       Biblioteca
     </div>
