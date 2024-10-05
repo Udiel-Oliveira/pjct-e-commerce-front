@@ -1,22 +1,58 @@
-"use client"
+"use client"; // Adicione esta linha no início do arquivo
 
-// Navbar.js
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styles from './navbar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 export default function NavBar() {
-  const currentRoute = usePathname(); // Obter a rota atual com usePathname
+  const currentRoute = usePathname(); 
+  const [isSubMenuOpen, setSubMenuOpen] = useState(false); 
 
+  const toggleSubMenu = () => {
+    setSubMenuOpen((prev) => !prev); 
+  };
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
-        <Link href="/pages/SignIn" className={styles.logo}>
-          <img src="/assets/logoHome.png" alt="" />
-        </Link>
 
+        <li className={styles.logoContainer}>
+            <Link href="#" className={styles.logo} onClick={toggleSubMenu}>
+                <img src="/assets/logoHome.png" alt="" />
+                <img style={{
+                width: '25px',
+                height: '25px',
+                transition: 'transform 0.3s', // Adiciona uma transição suave
+                transform: isSubMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)', // Rotaciona a seta
+              }} src="/assets/Arrow.svg" alt="" />
+            </Link>
+            {isSubMenuOpen && (
+                <ul className={styles.subMenu}>
+                <h1>Empresas Parceiras</h1>
+                <li>
+                    <Link href="#" className={styles.subItem}>
+                    <img src="/assets/Nostalgix_logo.svg" alt="Nostalgix" />
+                    <span className={styles.text}>Nostalgix</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#" className={styles.subItem}>
+                    <img src="/assets/DT1_logo.svg" alt="DT1" />
+                    <span className={styles.text}>DT1</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#" className={styles.subItem}>
+                    <img src="/assets/Gentix_logo.svg" alt="Gentix" />
+                    <span className={styles.text}>Gentix</span>
+                    </Link>
+                </li>
+                </ul>
+            )}
+            </li>
+            
         <li className={styles.link}>
           <Link href="/" className={styles.linkItem}>
           <div className={styles.iconConteiner}>
