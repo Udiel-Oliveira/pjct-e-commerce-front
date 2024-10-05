@@ -24,7 +24,7 @@ export default function NavBar(){
 
             <div className={styles.searchInput}>
                 <img src="/assets/lupa.svg" alt=""/>
-                <input type="text"
+                <input type="search"
                 placeholder="Pesquisar..." 
                 />
             </div>
@@ -45,7 +45,7 @@ export default function NavBar(){
                </Link> 
             </div>
 
-                <Link  href={"./pages/SignUp"}> <FontAwesomeIcon icon={faUser} style={{ width: '23', height: '23' }} /></Link>    
+                <Link className={styles.userImage}  href={"./pages/SignUp"}> <FontAwesomeIcon icon={faUser} style={{ width: '23', height: '23' }} /></Link>    
             </div>
             
         </nav>

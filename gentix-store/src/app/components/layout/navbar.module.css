@@ -54,5 +54,14 @@
 .searchInput input{
     border: none;
     padding-left: 20px;
+    width: 100%;
+}
+.userImage{
+    border-radius: 50%;
+    border: 2px solid #ffff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
