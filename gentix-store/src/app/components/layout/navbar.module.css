@@ -57,20 +57,48 @@
   
 .subMenu li {
     list-style: none; 
-    padding: 10px 0; 
+    padding: 0px 0; 
 }
-  .subItem{
+.subItem{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0.6;
+    transition: 0.3s all ease-in-out;
+}
+.subItem:hover{
+    background-color: rgb(14, 14, 14);
+    border-radius: 12px;
+    opacity: 1;
+}
+.subItem div{
     display: flex;
     align-items: center;
 }
+.icons{
+    font-size: 15px;
+    color: #fff;
+}
+.linkIcons{
+    font-size: 1.6rem;
+    color: gray;
+}
+
+.activeLink {
+    color: #fff;
+  }
   
 .subMenu li img {
     margin-right: 15px; 
-    width: 15%;
+    width:10%;
 }
   
 .text {
-    font-size: 18px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
 }
 .list{
     list-style: none;
@@ -80,7 +108,7 @@
     gap: 2rem;
 }
 .subMenu li{
-    margin-inline: 2rem;
+    margin-inline: 1rem 0rem;
     text-decoration: none;
     color: #ffff;
 }
