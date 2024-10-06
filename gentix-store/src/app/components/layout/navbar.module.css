@@ -31,7 +31,7 @@
     gap: 10px;
 }
 .logo img{
-    width: 45%;
+    width: 40%;
 }
 .logoContainer {
     position: relative;
@@ -41,8 +41,8 @@
     border-radius: 20px;
     position: absolute; 
     top: 100%; 
-    left: 0;
     backdrop-filter: blur(10px);
+    left: 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
     padding: 10px;
     width: 300px;
@@ -77,13 +77,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
 }
-.list li{
- margin-inline: 2rem;
+.subMenu li{
+    margin-inline: 2rem;
     text-decoration: none;
     color: #ffff;
-
-
 }
 .searchInput{
     width: 300px;

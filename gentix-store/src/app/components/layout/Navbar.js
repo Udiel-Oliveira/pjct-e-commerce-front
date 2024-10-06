@@ -22,8 +22,8 @@ export default function NavBar() {
             <Link href="#" className={styles.logo} onClick={toggleSubMenu}>
                 <img src="/assets/logoHome.png" alt="" />
                 <img style={{
-                width: '25px',
-                height: '25px',
+                width: '20px',
+                height: '20px',
                 transition: 'transform 0.3s', // Adiciona uma transição suave
                 transform: isSubMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)', // Rotaciona a seta
               }} src="/assets/Arrow.svg" alt="" />
