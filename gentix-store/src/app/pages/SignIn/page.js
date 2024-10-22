@@ -1,8 +1,13 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import styles from "./signIn.module.css";
 import Link from "next/link";
 
 const SignIn = () => {
+  const [emaill, setEmail] = useState('')
+  const [senhaa, setSenha] = useState('')
+
     return (
       <section className={styles.loginSection}>
         <div className={styles.item2}>
@@ -16,16 +21,20 @@ const SignIn = () => {
           <form className={styles.form}>
             <div className={styles.formContent}>
               <input
+                id={emaill}
                 name="email"
                 type="email"
                 placeholder="Endereço de E-mail"
                 className={styles.inputField}
+                onChange={(e)=>setEmail(e.target.value)}
                 required
               />
               <input
+                id={senhaa}
                 name="senha"
                 type="password"
                 placeholder="Senha"
+                onChange={(e)=>setSenha(e.target.value)}
                 className={styles.inputField}
                 required
               />

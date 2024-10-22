@@ -41,10 +41,11 @@
     border-radius: 20px;
     position: absolute; 
     top: 100%; 
-    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 10%);
+    backdrop-filter: blur(50px);
     left: 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
-    padding: 10px;
+    padding: 20px;
     width: 300px;
     z-index: 1000; 
 }
@@ -108,7 +109,6 @@
     gap: 2rem;
 }
 .subMenu li{
-    margin-inline: 1rem 0rem;
     text-decoration: none;
     color: #ffff;
 }
