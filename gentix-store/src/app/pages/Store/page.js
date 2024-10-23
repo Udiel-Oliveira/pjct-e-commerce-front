@@ -7,6 +7,7 @@ import React, { useRef } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import Link from "next/link";
 
 export default function Home() {
   const progressCircle = useRef(null);
@@ -24,7 +25,7 @@ export default function Home() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -35,7 +36,29 @@ export default function Home() {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className={styles.mySwiper}
       >
-        <SwiperSlide className={styles.SwiperSlide}></SwiperSlide>
+        <SwiperSlide className={styles.SwiperSlide}>
+          <div className={styles.swiperContent}>
+            <div className={styles.tagsContainer}>
+                <span>Rethro</span>
+                <span>Novo</span>
+            </div>
+
+            <div className={styles.infoGame}>
+                <h1>Machis's Quest</h1>
+                <p>Subway Money é um jogo eletrizante de corrida 
+                  infinita que devia os jogadores a navegar por um 
+                  percurso urbano cheio de obstáculos. O objetivo 
+                  principal é correr o máximo</p>
+            </div>
+
+            <div className={styles.btnActions}>
+                <Link href={"/"}><button className={styles.btnActive}>Saiba Mais</button></Link>
+                <Link href={"/"}><button className={styles.btn}>Dowload</button></Link>
+            </div>
+            
+          </div>
+          
+        </SwiperSlide>
         <SwiperSlide className={styles.SwiperSlide}>Slide 2</SwiperSlide>
         <SwiperSlide className={styles.SwiperSlide}>Slide 3</SwiperSlide>
         <SwiperSlide className={styles.SwiperSlide}>Slide 4</SwiperSlide>

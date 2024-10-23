@@ -45,7 +45,7 @@ button:active {
   width: 40px; /* Largura maior para fazer um retângulo */
   height: 5px; /* Altura menor para o formato retangular */
   border-radius: 5px; /* Arredonda os cantos */
-  background-color: #292929; /* Cor dos retângulos */
+  background-color: rgba(79, 78, 83, 0.6); /* Cor dos retângulos */
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
