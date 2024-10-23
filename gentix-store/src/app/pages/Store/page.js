@@ -4,12 +4,7 @@ import NavBar from "@/app/components/layout/Navbar";
 import styles from "../Store/store.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-  faArrowUpRightFromSquare, 
-  faCaretDown, 
   faDownload,
-  faUser, 
-  faBagShopping,
-  faBookOpen, 
   faPlay
 } from '@fortawesome/free-solid-svg-icons';
 import React, { useRef } from 'react';
