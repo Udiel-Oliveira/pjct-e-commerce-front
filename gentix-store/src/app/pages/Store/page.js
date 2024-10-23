@@ -48,7 +48,7 @@ export default function Home() {
             </div>
 
             <div className={styles.infoGame}>
-                <h1>Machis's Quest</h1>
+                <h1>Machi&apos;s Quest</h1>
                 <p>Subway Money é um jogo eletrizante de corrida 
                   infinita que devia os jogadores a navegar por um 
                   percurso urbano cheio de obstáculos. O objetivo 
