@@ -1,12 +1,9 @@
-"use client";
+"use client"; // Adicione esta linha no início do arquivo
 
 import NavBar from "@/app/components/layout/Navbar";
 import styles from "../Store/store.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faDownload,
-  faPlay
-} from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faPlay } from '@fortawesome/free-solid-svg-icons';
 import React, { useRef } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -25,155 +22,156 @@ export default function Home() {
     <div className={styles.page}>
       <NavBar />
       <div className={styles.swiperContainer}>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={false}
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className={styles.mySwiper}
-      >
-        <SwiperSlide className={styles.SwiperSlide}>
-          <div className={styles.swiperContent}>
-            <div className={styles.tagsContainer}>
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={false}
+          modules={[Autoplay, Pagination, Navigation]}
+          onAutoplayTimeLeft={onAutoplayTimeLeft}
+          className={styles.mySwiper}
+        >
+          <SwiperSlide className={styles.SwiperSlide}>
+            <div className={styles.swiperContent}>
+              <div className={styles.tagsContainer}>
                 <span>Rethro</span>
                 <span>Novo</span>
-            </div>
+              </div>
 
-            <div className={styles.infoGame}>
+              <div className={styles.infoGame}>
                 <h1>Machi&apos;s Quest</h1>
-                <p>Subway Money é um jogo eletrizante de corrida 
-                  infinita que devia os jogadores a navegar por um 
-                  percurso urbano cheio de obstáculos. O objetivo 
-                  principal é correr o máximo</p>
-            </div>
-            <FontAwesomeIcon icon="fa-regular fa-download" />
-            <div className={styles.btnActions}>
-                <Link href={"/"}>
-                  <button className={styles.btnActive}>
-                      <FontAwesomeIcon icon={faPlay} style={{fontSize: '20px'}}/>
-                      Saiba Mais
-                  </button>
-                </Link>
-                <Link href={"/"}>
-                  <button className={styles.btn}>
-                    <FontAwesomeIcon icon={faDownload} style={{fontSize: '20px'}}/>
-                    Dowload
-                  </button>
-                </Link>
-            </div>
-          </div> 
-        </SwiperSlide>
+                <p>
+                  Subway Money é um jogo eletrizante de corrida infinita que 
+                  desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.
+                </p>
+              </div>
 
-        <SwiperSlide className={styles.SwiperSlide}>
-          <div className={styles.swiperContent}>
-            <div className={styles.tagsContainer}>
+              <div className={styles.btnActions}>
+                <Link href="/">
+                  <button className={styles.btnActive}>
+                    <FontAwesomeIcon icon={faPlay} style={{ fontSize: '20px' }} />
+                    Saiba Mais
+                  </button>
+                </Link>
+                <Link href="/">
+                  <button className={styles.btn}>
+                    <FontAwesomeIcon icon={faDownload} style={{ fontSize: '20px' }} />
+                    Download
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide className={styles.SwiperSlide}>
+            <div className={styles.swiperContent}>
+              <div className={styles.tagsContainer}>
                 <span>Rethro</span>
                 <span>Novo</span>
-            </div>
+              </div>
 
-            <div className={styles.infoGame}>
-                <h1>Machis's Quest</h1>
-                <p>Subway Money é um jogo eletrizante de corrida 
-                  infinita que devia os jogadores a navegar por um 
-                  percurso urbano cheio de obstáculos. O objetivo 
-                  principal é correr o máximo</p>
-            </div>
-            <FontAwesomeIcon icon="fa-regular fa-download" />
-            <div className={styles.btnActions}>
-                <Link href={"/"}>
+              <div className={styles.infoGame}>
+                <h1>Machi&apos;s Quest</h1>
+                <p>
+                  Subway Money é um jogo eletrizante de corrida infinita que 
+                  desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.
+                </p>
+              </div>
+
+              <div className={styles.btnActions}>
+                <Link href="/">
                   <button className={styles.btnActive}>
-                      <FontAwesomeIcon icon={faPlay} style={{fontSize: '20px'}}/>
-                      Saiba Mais
+                    <FontAwesomeIcon icon={faPlay} style={{ fontSize: '20px' }} />
+                    Saiba Mais
                   </button>
                 </Link>
-                <Link href={"/"}>
+                <Link href="/">
                   <button className={styles.btn}>
-                    <FontAwesomeIcon icon={faDownload} style={{fontSize: '20px'}}/>
-                    Dowload
+                    <FontAwesomeIcon icon={faDownload} style={{ fontSize: '20px' }} />
+                    Download
                   </button>
                 </Link>
+              </div>
             </div>
-          </div> 
-        </SwiperSlide>
+          </SwiperSlide>
 
-        <SwiperSlide className={styles.SwiperSlide}>
-          <div className={styles.swiperContent}>
-            <div className={styles.tagsContainer}>
+          <SwiperSlide className={styles.SwiperSlide}>
+            <div className={styles.swiperContent}>
+              <div className={styles.tagsContainer}>
                 <span>Rethro</span>
                 <span>Novo</span>
-            </div>
+              </div>
 
-            <div className={styles.infoGame}>
-                <h1>Machis's Quest</h1>
-                <p>Subway Money é um jogo eletrizante de corrida 
-                  infinita que devia os jogadores a navegar por um 
-                  percurso urbano cheio de obstáculos. O objetivo 
-                  principal é correr o máximo</p>
-            </div>
-            <FontAwesomeIcon icon="fa-regular fa-download" />
-            <div className={styles.btnActions}>
-                <Link href={"/"}>
+              <div className={styles.infoGame}>
+                <h1>Machi&apos;s Quest</h1>
+                <p>
+                  Subway Money é um jogo eletrizante de corrida infinita que 
+                  desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.
+                </p>
+              </div>
+
+              <div className={styles.btnActions}>
+                <Link href="/">
                   <button className={styles.btnActive}>
-                      <FontAwesomeIcon icon={faPlay} style={{fontSize: '20px'}}/>
-                      Saiba Mais
+                    <FontAwesomeIcon icon={faPlay} style={{ fontSize: '20px' }} />
+                    Saiba Mais
                   </button>
                 </Link>
-                <Link href={"/"}>
+                <Link href="/">
                   <button className={styles.btn}>
-                    <FontAwesomeIcon icon={faDownload} style={{fontSize: '20px'}}/>
-                    Dowload
+                    <FontAwesomeIcon icon={faDownload} style={{ fontSize: '20px' }} />
+                    Download
                   </button>
                 </Link>
+              </div>
             </div>
-          </div> 
-        </SwiperSlide>
+          </SwiperSlide>
 
-        <SwiperSlide className={styles.SwiperSlide}>
-          <div className={styles.swiperContent}>
-            <div className={styles.tagsContainer}>
+          <SwiperSlide className={styles.SwiperSlide}>
+            <div className={styles.swiperContent}>
+              <div className={styles.tagsContainer}>
                 <span>Rethro</span>
                 <span>Novo</span>
-            </div>
+              </div>
 
-            <div className={styles.infoGame}>
-                <h1>Machis's Quest</h1>
-                <p>Subway Money é um jogo eletrizante de corrida 
-                  infinita que devia os jogadores a navegar por um 
-                  percurso urbano cheio de obstáculos. O objetivo 
-                  principal é correr o máximo</p>
-            </div>
-            <FontAwesomeIcon icon="fa-regular fa-download" />
-            <div className={styles.btnActions}>
-                <Link href={"/"}>
+              <div className={styles.infoGame}>
+                <h1>Machi&apos;s Quest</h1>
+                <p>
+                  Subway Money é um jogo eletrizante de corrida infinita que 
+                  desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.
+                </p>
+              </div>
+
+              <div className={styles.btnActions}>
+                <Link href="/">
                   <button className={styles.btnActive}>
-                      <FontAwesomeIcon icon={faPlay} style={{fontSize: '20px'}}/>
-                      Saiba Mais
+                    <FontAwesomeIcon icon={faPlay} style={{ fontSize: '20px' }} />
+                    Saiba Mais
                   </button>
                 </Link>
-                <Link href={"/"}>
+                <Link href="/">
                   <button className={styles.btn}>
-                    <FontAwesomeIcon icon={faDownload} style={{fontSize: '20px'}}/>
-                    Dowload
+                    <FontAwesomeIcon icon={faDownload} style={{ fontSize: '20px' }} />
+                    Download
                   </button>
                 </Link>
+              </div>
             </div>
-          </div> 
-        </SwiperSlide>
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
-      </Swiper>
+          </SwiperSlide>
+
+          <div className="autoplay-progress" slot="container-end">
+            <svg viewBox="0 0 48 48" ref={progressCircle}>
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span ref={progressContent}></span>
+          </div>
+        </Swiper>
       </div>
     </div>
   );
