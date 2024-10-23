@@ -42,8 +42,8 @@ padding-top: 2rem;
     align-items: start;
 }
 .tagsContainer span{
-    background-color: rgba(217, 217, 217, 0.3);
     backdrop-filter: blur(20px);
+    background-color: rgba(217, 217, 217, 0.1);
     padding: 5px 15px;
     border-radius: 20px;
 }
@@ -60,7 +60,12 @@ padding-top: 2rem;
     gap: 2rem;
 }
 .btnActions button{
-    padding: 10px 30px;
+    
+    width: 100%;
+    gap: 1rem;
+    padding: 10px 20px 10px 15px;
+    display: flex;
+    justify-content: space-between;
     font-weight: 700;
     border-radius: 200rem;
     cursor: pointer;

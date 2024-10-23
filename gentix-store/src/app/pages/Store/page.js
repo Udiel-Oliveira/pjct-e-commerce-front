@@ -2,7 +2,16 @@
 
 import NavBar from "@/app/components/layout/Navbar";
 import styles from "../Store/store.module.css";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faArrowUpRightFromSquare, 
+  faCaretDown, 
+  faDownload,
+  faUser, 
+  faBagShopping,
+  faBookOpen, 
+  faPlay
+} from '@fortawesome/free-solid-svg-icons';
 import React, { useRef } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -50,23 +59,119 @@ export default function Home() {
                   percurso urbano cheio de obstáculos. O objetivo 
                   principal é correr o máximo</p>
             </div>
-
+            <FontAwesomeIcon icon="fa-regular fa-download" />
             <div className={styles.btnActions}>
-                <Link href={"/"}><button className={styles.btnActive}>Saiba Mais</button></Link>
-                <Link href={"/"}><button className={styles.btn}>Dowload</button></Link>
+                <Link href={"/"}>
+                  <button className={styles.btnActive}>
+                      <FontAwesomeIcon icon={faPlay} style={{fontSize: '20px'}}/>
+                      Saiba Mais
+                  </button>
+                </Link>
+                <Link href={"/"}>
+                  <button className={styles.btn}>
+                    <FontAwesomeIcon icon={faDownload} style={{fontSize: '20px'}}/>
+                    Dowload
+                  </button>
+                </Link>
             </div>
-            
-          </div>
-          
+          </div> 
         </SwiperSlide>
-        <SwiperSlide className={styles.SwiperSlide}>Slide 2</SwiperSlide>
-        <SwiperSlide className={styles.SwiperSlide}>Slide 3</SwiperSlide>
-        <SwiperSlide className={styles.SwiperSlide}>Slide 4</SwiperSlide>
-        <SwiperSlide className={styles.SwiperSlide}>Slide 5</SwiperSlide>
-        <SwiperSlide className={styles.SwiperSlide}>Slide 6</SwiperSlide>
-        <SwiperSlide className={styles.SwiperSlide}>Slide 7</SwiperSlide>
-        <SwiperSlide className={styles.SwiperSlide}>Slide 8</SwiperSlide>
-        <SwiperSlide className={styles.SwiperSlide}>Slide 9</SwiperSlide>
+
+        <SwiperSlide className={styles.SwiperSlide}>
+          <div className={styles.swiperContent}>
+            <div className={styles.tagsContainer}>
+                <span>Rethro</span>
+                <span>Novo</span>
+            </div>
+
+            <div className={styles.infoGame}>
+                <h1>Machis's Quest</h1>
+                <p>Subway Money é um jogo eletrizante de corrida 
+                  infinita que devia os jogadores a navegar por um 
+                  percurso urbano cheio de obstáculos. O objetivo 
+                  principal é correr o máximo</p>
+            </div>
+            <FontAwesomeIcon icon="fa-regular fa-download" />
+            <div className={styles.btnActions}>
+                <Link href={"/"}>
+                  <button className={styles.btnActive}>
+                      <FontAwesomeIcon icon={faPlay} style={{fontSize: '20px'}}/>
+                      Saiba Mais
+                  </button>
+                </Link>
+                <Link href={"/"}>
+                  <button className={styles.btn}>
+                    <FontAwesomeIcon icon={faDownload} style={{fontSize: '20px'}}/>
+                    Dowload
+                  </button>
+                </Link>
+            </div>
+          </div> 
+        </SwiperSlide>
+
+        <SwiperSlide className={styles.SwiperSlide}>
+          <div className={styles.swiperContent}>
+            <div className={styles.tagsContainer}>
+                <span>Rethro</span>
+                <span>Novo</span>
+            </div>
+
+            <div className={styles.infoGame}>
+                <h1>Machis's Quest</h1>
+                <p>Subway Money é um jogo eletrizante de corrida 
+                  infinita que devia os jogadores a navegar por um 
+                  percurso urbano cheio de obstáculos. O objetivo 
+                  principal é correr o máximo</p>
+            </div>
+            <FontAwesomeIcon icon="fa-regular fa-download" />
+            <div className={styles.btnActions}>
+                <Link href={"/"}>
+                  <button className={styles.btnActive}>
+                      <FontAwesomeIcon icon={faPlay} style={{fontSize: '20px'}}/>
+                      Saiba Mais
+                  </button>
+                </Link>
+                <Link href={"/"}>
+                  <button className={styles.btn}>
+                    <FontAwesomeIcon icon={faDownload} style={{fontSize: '20px'}}/>
+                    Dowload
+                  </button>
+                </Link>
+            </div>
+          </div> 
+        </SwiperSlide>
+
+        <SwiperSlide className={styles.SwiperSlide}>
+          <div className={styles.swiperContent}>
+            <div className={styles.tagsContainer}>
+                <span>Rethro</span>
+                <span>Novo</span>
+            </div>
+
+            <div className={styles.infoGame}>
+                <h1>Machis's Quest</h1>
+                <p>Subway Money é um jogo eletrizante de corrida 
+                  infinita que devia os jogadores a navegar por um 
+                  percurso urbano cheio de obstáculos. O objetivo 
+                  principal é correr o máximo</p>
+            </div>
+            <FontAwesomeIcon icon="fa-regular fa-download" />
+            <div className={styles.btnActions}>
+                <Link href={"/"}>
+                  <button className={styles.btnActive}>
+                      <FontAwesomeIcon icon={faPlay} style={{fontSize: '20px'}}/>
+                      Saiba Mais
+                  </button>
+                </Link>
+                <Link href={"/"}>
+                  <button className={styles.btn}>
+                    <FontAwesomeIcon icon={faDownload} style={{fontSize: '20px'}}/>
+                    Dowload
+                  </button>
+                </Link>
+            </div>
+          </div> 
+        </SwiperSlide>
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
