@@ -22,47 +22,12 @@
   flex: 1;
 }
 
-.formContainer {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
 .signInHeader {
   display: flex;
   align-items: center;
   font-size: 15px;
   justify-content: center;
   gap: 2rem;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.formContent {
-  width: 80%;
-}
-
-.inputField {
-  margin-bottom: 35px;
-  padding: 15px;
-  width: 100%;
-  border: 3px solid #4F4E53;
-  border-radius: 20px;
-  background-color: #202020;
-  font-size: 15px;
-  color: #ffffff;
-}
-
-.termsSection {
-  display: flex;
-  margin-bottom: 35px;
-  gap: 10px;
 }
 
 .loginLink {
@@ -84,120 +49,12 @@
   height: 100vh;
 }
 
-.submitButton {
-  padding: 20px;
-  border: none;
-  width: 80%;
-  border-radius: 20px;
-  background-color: #6100FF;
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-family: Inter, sans-serif;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.termsSection input[name="termsAccepted"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.checkmark {
-  display: flex;
-  align-items: center;
-  position: relative;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.checkmark::before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  border: 2px solid #ffffff;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.termsSection input[name="termsAccepted"]:checked + .checkmark::before {
-  border-color: #6100FF;
-  background-color: #6100FF;
-}
-
-.termsSection input[name="termsAccepted"]:checked + .checkmark::after {
-  content: "";
-  position: absolute;
-  left: 7px;
-  top: 3px;
-  width: 6px;
-  height: 11px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-}
-
-.checkmark h4 {
-  margin: 0;
-}
-
-.selectContainer {
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
-}
-
-.selectContainer label {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #333;
-}
-
-.selectContainer select {
-  width: 100%;
-  margin-bottom: 35px;
-  padding: 15px;
-  border: none;
-  border: 3px solid #4F4E53;
-  border-radius: 20px;
-  background-color: #202020;
-  font-size: 16px;
-  color: #ffffff;
-  transition: border-color 0.3s ease;
-  appearance: none;
-  cursor: pointer;
-}
-
-
-
 @media (max-width: 1280px) and (min-width: 1024px) {
     .signInHeader{
         font-size: 15px;
     }
     .signInHeader img{
         width: 8%;
-    }
-    .selectContainer select{
-        margin-bottom: 20px;
-    }
-    .inputField,.selectContainer select, .submitButton{
-        padding: 15px;
-        border-radius: 15px;
-        font-size: 18px;
-        margin-bottom: 20px;
-        width: 100%;
-    }
-    .checkmark h4, .loginLink{
-        font-size: 14px;
-    }
-    .formContent{
-        width: 100%;
-    }
-    .formContainer{
-        gap: 1rem;
     }
     .container{
         gap: 2rem;
@@ -210,34 +67,6 @@
     .signInHeader img{
         width: 5%;
     }
-    .selectContainer select{
-        margin-bottom: 0px;
-        padding: 25px;
-        border-radius: 15px;
-        font-size: 18px;
-    }
-    .inputField{
-        padding: 20px;
-        border-radius: 15px;
-        font-size: 18px;
-        margin-bottom: 0px;
-    }
-    .checkmark h4, #login_link{
-        font-size: 20px;
-    }
-    .formContent{
-        width: 100%;
-        display: flex;
-        gap: 3rem;
-        margin-bottom: 35px;
-        flex-direction: column;
-    }
-    .submitButton{
-        padding: 25px;
-        width: 100%;
-        border-radius: 15px;
-        font-size: 20px;
-    }
     .container{
         height: fit-content;
         flex-direction: column;
@@ -245,53 +74,23 @@
     #prop{
         width: 100%;
     }
-    .formContainer{
-        gap: 2.5rem;
-    }
+    #login_link{
+      font-size: 20px;
+  }
 }
 
 @media (max-width: 860px) and (min-width: 600px) {
     #prop, .item2{
         display: none;
     }
-    .formContent
-    {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-        margin-bottom: 35px;
-    }
-    .inputField{
-        padding: 20px;
-        border-radius: 15px;
-        margin: 0px;
-        font-size: 18px;
-    }
-    .selectContainer select{
-        padding: 20px;
-        border-radius: 15px;
-        margin: 0px;
-    }
-    .submitButton{
-        width: 100%;
-        padding: 25px;
-    }
-    .checkmark, #login_link h4{
-        font-size: 18px;
-    }
+    #login_link h4{
+      font-size: 18px;
+  }
 }
 
 @media (max-width: 600px) and (min-width: 376px) {
     #prop,.item2{
         display: none;
-    }
-    .formContent
-    {
-        width: 100%;
-    }
-    .submitButton{
-        width: 100%;
     }
     .container{
         padding: 30px;
@@ -305,37 +104,7 @@
     .item2{
         display: none;
     }
-    .submitButton{
-        width: 100%;
-        padding: 12px;
-    }
-    .selectContainer select{
-        padding: 10px;
-        border-radius: 15px;
-        margin-bottom: 15px;
-    }
-    .inputField{
-        padding: 10px;
-        border-radius: 15px;
-        margin-bottom: 15px;
-    }
-    .checkmark::before{
-        width: 15px;
-        height: 15px;
-    }
-    .termsSection input[name="terms"]:checked + .checkmark::after{
-        left: 6px;
-        top: 2px;
-        width: 4px;
-        height: 9px;
-    }
     .loginLink h4{
         font-size: 13px;
-    }
-    .checkmark{
-        font-size: 13px;
-    }
-    .formContent{
-        width: 100%;
     }
 }
