@@ -49,6 +49,18 @@
   height: 100vh;
 }
 
+.formContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.loginLink{
+  font-size: 14px;
+}
+
 @media (max-width: 1280px) and (min-width: 1024px) {
     .signInHeader{
         font-size: 15px;
