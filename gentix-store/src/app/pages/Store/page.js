@@ -1,6 +1,7 @@
 "use client"; // Adicione esta linha no início do arquivo
 
 import NavBar from "@/app/components/layout/Navbar";
+import Footer from "@/app/components/layout/Footer";
 import styles from "../Store/store.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faPlay } from '@fortawesome/free-solid-svg-icons';
@@ -173,6 +174,7 @@ export default function Home() {
           </div>
         </Swiper>
       </div>
+      <Footer/>
     </div>
   );
 }

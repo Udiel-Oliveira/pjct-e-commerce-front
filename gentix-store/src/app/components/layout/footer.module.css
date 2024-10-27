@@ -1,0 +1,50 @@
+.autors{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+
+.autors_title{
+    width: 90%;
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: row;
+
+
+}
+.itenTitle{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.autors_title_git{
+    width: 90%;
+    justify-content: center;
+    border-top: 1px solid #757474;
+
+}
+
+
+.itens{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon{
+    font-size: 30px;
+    color: #fff;
+}
+
+
+.txtSub{
+    color: #9b9a9e;
+}
