@@ -10,9 +10,17 @@ export default function Footer() {
             <div className={styles.autors}>
                 <div className={styles.autors_title}>
                     <div className={styles.itenTitle}>
-                <h3>GenTix Store</h3>
-                <p className={styles.txtSub} >Investimentos legais</p>
-                <p className={styles.txtSub} >Investimentos legais</p>
+              <div className={styles.logo}>
+                <img src="/assets/logoHome.png" alt='Logo-Home' className={styles.logo_img} ></img>
+                <h4 className={styles.txtLinkTitle1}>GenTix Store</h4>
+              </div>
+              <div className={styles.map}>
+                <h3 className={styles.txtLinkTitle2}>Jogos feito pela Nostalgix</h3> 
+              <p className={styles.txtLink} >Investimentos legais</p>
+              <p className={styles.txtLink} >Investimentos legais</p>
+              <p className={styles.txtLink} >Investimentos legais</p>
+              </div>
+
 
                     </div>
 

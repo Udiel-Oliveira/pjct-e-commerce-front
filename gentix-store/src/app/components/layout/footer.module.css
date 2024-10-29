@@ -6,7 +6,30 @@
  
 }
 
+.logo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo_img{
+    width: 35px;
+    margin-right: 10px;
+}
 
+.map{
+    margin-top: 1rem;
+}
+.txtLink{
+    font-size: 14px;
+    margin-top: 5px;
+}
+.txtLinkTitle1{
+
+ }
+.txtLinkTitle2{
+   color: #4F4E53;
+}
 .autors_title{
     width: 90%;
     display: flex;
@@ -26,8 +49,8 @@
     width: 90%;
     height: 6rem;
     display: flex;
-    align-items: centers;
-
+    align-items: center;
+    margin-top: 1rem;
     justify-content: center;
     border-top: 1px solid #757474;
 
