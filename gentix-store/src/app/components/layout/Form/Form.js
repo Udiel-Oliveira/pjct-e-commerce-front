@@ -25,7 +25,7 @@ export default function Form({type, name, placeholder, value, handleOnChange}) {
         });
       };
   return (
-    <>
+    <div>
         <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.formContent}>
               <div className={styles.selectContainer}>
@@ -87,6 +87,6 @@ export default function Form({type, name, placeholder, value, handleOnChange}) {
 
             <button type="submit" className={styles.submitButton}>Continuar</button>
         </form>
-    </>
+    </div>
   );
 }

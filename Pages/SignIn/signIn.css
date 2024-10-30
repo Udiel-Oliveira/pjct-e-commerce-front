@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    /* Configurações do modelo de caixa */
+    margin: 0;
+    padding: 0;
+    /* Configurações de tipografia */
+    font-family: "Inter", system-ui;
+    /* Diversos */
+    box-sizing: border-box;
+}
+input:focus {
+    outline: none;
+}
+
+body {
+    /* Configurações do modelo de caixa */
+    width: 100%;
+    height: 100%;
+    background-color: #0F0F11;
+    background-image: url(/assets/images/grid\ 2.svg);
+    background-repeat: repeat;
+    background-size: 100%;
+    /* Configurações de tipografia */
+    color: white;
+}
+
+section, .login-section {
+    /* Configurações de exibição */
+    display: flex;
+    justify-content: space-between;
+    /* Configurações do modelo de caixa */
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    /* Diversos */
+    gap: 5rem;
+}
+.item2
+{
+    display: flex;
+    flex: 1;
+}
+
+.login_container {
+    /* Configurações de exibição */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Configurações do modelo de caixa */
+    height: 100%;
+}
+
+.login_header {
+    /* Configurações de exibição */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Diversos */
+    gap: 2rem;
+}
+
+form {
+    /* Configurações de exibição */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form_content
+{
+    width: 80%;
+}
+.input_field {
+    /* Configurações do modelo de caixa */
+    margin-bottom: 35px;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    border: 3px solid #4F4E53;
+    border-radius: 20px;
+    background-color: #202020;
+    /* Configurações de tipografia */
+    font-size: 15px;
+    color: #ffffff;
+}
+#signup_link {
+    /* Configurações de exibição */
+    display: flex;
+    justify-content: center;
+}
+#signup_link a{
+    text-decoration: none;
+    color: #ffffff;
+}
+#signup_link strong{
+    text-decoration: underline;
+}
+.submit_button {
+    /* Configurações do modelo de caixa */
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    width: 80%;
+    background-color: #6100FF;
+    /* Configurações de tipografia */
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Diversos */
+    cursor: pointer;
+}
+
+.google_container {
+    /* Configurações de exibição */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Configurações do modelo de caixa */
+    width: 100%;
+    /* Diversos */
+    gap: 2rem;
+}
+
+.google_login {
+    /* Configurações de exibição */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* Configurações do modelo de caixa */
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    /* Configurações de tipografia */
+    color: #000000;
+}
+
+.google_login img {
+    /* Configurações do modelo de caixa */
+    width: 10%;
+}
+
+@media (max-width: 1280px) and (min-width: 1023px) {
+    .signIn_header{
+        font-size: 15px;
+    }
+    .signIn_header img{
+        width: 8%;
+    }
+    .select-container select{
+        margin-bottom: 25px;
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 15px;
+    }
+    .input_field, .submit_button{
+        padding: 15px;
+        border-radius: 15px;
+        font-size: 18px;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    .checkmark h4, #signup_link{
+        font-size: 14px;
+    }
+    .form_content{
+        width: 100%;
+    }
+   section{
+    gap: 2rem;
+   }
+}
+@media (max-width: 1024px) and (min-width: 860px) and (min-height: 1366px) {
+    .signIn_header{
+        font-size: 15px;
+    }
+    .signIn_header img{
+        width: 5%;
+    }
+    .input_field{
+        padding: 20px;
+        border-radius: 15px;
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .google_login{
+        font-size: 18px;
+        padding: 20px;
+        margin-top: 2rem;
+        border-radius: 55px;
+    }
+    #signup_link{
+        font-size: 20px;
+    }
+    .form_content{
+        width: 80%;
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 3.5rem;
+        flex-direction: column;
+    }
+    .submit_button{
+        padding: 25px;
+        width: 80%;
+        border-radius: 15px;
+        font-size: 20px;
+        margin-bottom: 2rem;
+    }
+    section{
+        height: fit-content;
+        flex-direction: column;
+    }
+    .item2{
+        justify-content: center;
+        align-items: center;
+    }
+    #prop{
+        width: 100%;
+    }
+    .login_container{
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 860px) and (min-width: 600px) {
+
+#prop, .item2{
+    display: none;
+}
+.form_content
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 35px;
+}
+.input_field{
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0px;
+    font-size: 18px;
+}
+.select-container select{
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0px;
+}
+.submit_button{
+    width: 100%;
+    padding: 25px;
+}
+.checkmark, #signup_link h4{
+    font-size: 18px;
+}
+
+}
+
+@media (max-width: 600px) and (min-width: 376px) {
+
+#prop,.item2{
+    display: none;
+}
+.form_content
+{
+    width: 100%;
+}
+.submit_button{
+    width: 100%;
+}
+}
+
+@media (max-width: 376px) {
+section{
+    padding: 30px;
+}    
+.form_content
+{
+    width: 100%;
+}
+.item2{
+    display: none;
+}
+.submit_button{
+    width: 100%;
+    padding: 12px;
+}
+.select-container select{
+    padding: 10px;
+    border-radius: 15px;
+}
+.input_field{
+    padding: 10px;
+    border-radius: 15px;
+}
+.checkmark::before{
+    width: 15px;
+    height: 15px;
+}
+input[name="terms"]:checked + .checkmark::after{
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+}
+#signup_link h4{
+    font-size: 13px;
+}
+
+}
