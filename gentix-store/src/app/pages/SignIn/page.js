@@ -9,7 +9,7 @@ const SignIn = () => {
   const [senhaa, setSenha] = useState('')
 
     return (
-      <section className={styles.loginSection}>
+      <section className={styles.page}>
         <div className={styles.item2}>
           <img src="/assets/Propaganda2.svg" id="prop" alt="Propaganda contendo vários jogos, Minecraft, Pokemon, Super Mario Bros" />
         </div>

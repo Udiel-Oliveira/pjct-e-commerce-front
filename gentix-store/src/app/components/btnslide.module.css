@@ -1,0 +1,24 @@
+.btnActions{
+    display: flex;
+    gap: 2rem;
+}
+.btnActions button{
+    
+    width: 100%;
+    gap: 1rem;
+    padding: 10px 20px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    border-radius: 200rem;
+    cursor: pointer;
+    backdrop-filter: blur(30px);
+    transition: all 0.5s ease-in-out;
+}
+.btn{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.btn:hover, .btnActive{
+    background-color: #fff;
+    color: #000;
+}

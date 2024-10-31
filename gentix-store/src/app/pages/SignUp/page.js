@@ -12,7 +12,6 @@ const inter = Inter({
 const SignUp = () => {
 
   return (
-    <body className={inter.className}>
       <section className={styles.container}>
         <div className={styles.formContainer}>
           <div className={styles.signInHeader}>
@@ -30,7 +29,6 @@ const SignUp = () => {
           <img src="/assets/Propaganda.svg" alt="Propaganda" id="prop" />
         </div>
       </section>
-    </body>
   );
 };
 

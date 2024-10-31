@@ -27,7 +27,6 @@ export default function Footer() {
 
 
 
-
                 </div>
                 <div className={styles.autors_title_git}>
 
