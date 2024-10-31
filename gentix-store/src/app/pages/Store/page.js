@@ -1,5 +1,3 @@
-
-// app/page.js
 "use client";
 
 import NavBar from "@/app/components/layout/Navbar";
@@ -21,21 +19,27 @@ export default function HomePage() {
 
   const slidesData = [
     {
+      tags1: "Ação",
+      tags2:"Aventura",
       title: "Machi's Quest",
       description: "Subway Money é um jogo eletrizante de corrida infinita que desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.",
-      backgroundImage: "/assets/jogo1.svg" // Caminho para a imagem de fundo
+      backgroundImage: "/assets/jogo1.svg"
     },
     {
+      tags1: "Estratégia",
+      tags2:"Survival",
       title: "SubwaySurfes",
       description: "Subway Money é um jogo eletrizante de corrida infinita que desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.",
-      backgroundImage: "/assets/jogo1.svg" // Caminho para a imagem de fundo
+      backgroundImage: "/assets/jogo1.svg" 
     },
     {
+      tags1: "Mundo Aberto",
+      tags2:"Puzzle",
       title: "Machi's Quest",
       description: "Subway Money é um jogo eletrizante de corrida infinita que desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.",
-      backgroundImage: "/assets/jogo1.svg" // Caminho para a imagem de fundo
+      backgroundImage: "/assets/jogo1.svg"
     },
-    // Adicione mais slides aqui se necessário
+
   ];
 
   return (
@@ -57,7 +61,7 @@ export default function HomePage() {
         >
           {slidesData.map((slide, index) => (
             <SwiperSlide key={index} className={styles.SwiperSlide} style={{ backgroundImage: `url(${slide.backgroundImage})` }}>
-                <GameSlide title={slide.title} description={slide.description} />
+                <GameSlide title={slide.title} description={slide.description} tags1={slide.tags1} tags2={slide.tags2} />
             </SwiperSlide>
           ))}
           
