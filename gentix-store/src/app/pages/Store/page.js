@@ -73,6 +73,9 @@ export default function HomePage() {
           </div>
         </Swiper>
       </div>
+      <div className={styles.Main}>
+
+      </div>
       <Footer />
     </div>
   );
