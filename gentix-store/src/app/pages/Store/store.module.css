@@ -4,6 +4,8 @@
     background-image: url(/assets/background.svg);
     background-size: 100%;
     background-repeat: repeat;
+    padding-left: 60px;
+    padding-right: 60px;
     background-color: #000;
 }
 .swiperContainer
@@ -18,7 +20,7 @@
 .mySwiper{
     border-radius: 20px;
     height: 100%;
-    width: 95%;
+    width: 100%;
 }
 .SwiperSlide
 {
@@ -30,3 +32,48 @@
 .Main{
     height: 100vh;
 }
+.gameSwiper{
+    border-radius: 20px;
+}
+.titleSec
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.mainGames
+{
+    margin-bottom: 45px;
+}
+.customNavigation {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .customPrev,
+  .customNext {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #fff;
+    background-color: #393939;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .customPrev:hover,
+  .customNext:hover{
+    background-color: #4c4c4c;
+  }
+  .swiperSlide {
+    height: 60vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+  }
