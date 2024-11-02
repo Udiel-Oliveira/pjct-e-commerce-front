@@ -5,6 +5,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 0rem;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 .links{
     display: flex;

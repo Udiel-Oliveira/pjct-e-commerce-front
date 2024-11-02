@@ -7,20 +7,9 @@ import styles from "../Store/store.module.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import React, { useRef, useEffect } from 'react';
+import GameShowcase from "@/app/components/GameShowCase";
 
 export default function HomePage() {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const nextRef = useRef(null);
-  const prevRef = useRef(null);
-  const swiperRef = useRef(null);
-
-  useEffect(() => {
-    const swiperInstance = swiperRef.current.swiper;
-    swiperInstance.navigation.init();
-    swiperInstance.navigation.update();
-  }, []);
-
   const slidesData = [
     {
       tags1: "Ação",
@@ -44,17 +33,18 @@ export default function HomePage() {
       backgroundImage: "/assets/jogo1.svg"
     },
   ];
-  const goToNextSlides = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slideTo(swiperRef.current.swiper.activeIndex + 4); // Avança 4 slides
-    }
-  };
 
-  const goToPrevSlides = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slideTo(swiperRef.current.swiper.activeIndex - 4); // Retorna 4 slides
-    }
-  };
+  const mainGamesData = [
+    { tag: "Tipo", title: "Jogo 1", price: "R$000,00", backgroundImage: "" },
+    { tag: "Tipo", title: "Jogo 2", price: "R$000,00", backgroundImage: "" },
+    { tag: "Tipo", title: "Jogo 3", price: "R$000,00", backgroundImage: "" },
+    { tag: "Tipo", title: "Jogo 4", price: "R$000,00", backgroundImage: "" },
+    { tag: "Tipo", title: "Jogo 5", price: "R$000,00", backgroundImage: "" },
+    { tag: "Tipo", title: "Jogo 6", price: "R$000,00", backgroundImage: "" },
+    { tag: "Tipo", title: "Jogo 7", price: "R$000,00", backgroundImage: "" },
+    { tag: "Tipo", title: "Jogo 8", price: "R$000,00", backgroundImage: "" },
+    
+  ];
   return (
     <div className={styles.page}>
       <NavBar />
@@ -79,47 +69,7 @@ export default function HomePage() {
           ))}
         </Swiper>
       </div>
-
-      <div className={styles.mainGames}>
-        <div className={styles.titleSec}>
-          <h1>Principais Jogos</h1>
-          <div className={styles.customNavigation}>
-            <div onClick={goToPrevSlides} ref={prevRef} className={styles.customPrev}>◀</div>
-            <div onClick={goToNextSlides} ref={nextRef} className={styles.customNext}>▶</div>
-          </div>
-        </div>
-
-        <Swiper
-          ref={swiperRef}
-          slidesPerView={4}
-          spaceBetween={30}
-          loop={false}
-          pagination={false}
-          navigation={{
-            nextEl: nextRef.current, 
-            prevEl: prevRef.current  
-          }}
-          onInit={(swiper) => {
-
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          parallax={true}
-          modules={[Pagination, Navigation]}
-          className={styles.gameSwiper}
-        >
-          <SwiperSlide className={styles.swiperSlide}>Slide 1</SwiperSlide>
-          <SwiperSlide className={styles.swiperSlide}>Slide 2</SwiperSlide>
-          <SwiperSlide className={styles.swiperSlide}>Slide 3</SwiperSlide>
-          <SwiperSlide className={styles.swiperSlide}>Slide 4</SwiperSlide>
-          <SwiperSlide className={styles.swiperSlide}>Slide 5</SwiperSlide>
-          <SwiperSlide className={styles.swiperSlide}>Slide 6</SwiperSlide>
-          <SwiperSlide className={styles.swiperSlide}>Slide 7</SwiperSlide>
-          <SwiperSlide className={styles.swiperSlide}>Slide 8</SwiperSlide>
-        </Swiper>
-      </div>
+        <GameShowcase games={mainGamesData} />
       <Footer />
     </div>
   );
