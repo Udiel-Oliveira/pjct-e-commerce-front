@@ -63,7 +63,6 @@ const GameShowcase = ({ games }) => {
           <SwiperSlide
             key={index}
             className={styles.swiperSlide}
-            
           >
             <div className={styles.gameImg} style={{
               backgroundImage: `url(${game.backgroundImage})`,

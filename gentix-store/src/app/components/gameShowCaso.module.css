@@ -41,8 +41,8 @@
   {
     margin-top: 30px;
       margin-bottom: 45px;
-      padding-left: 60px;
-      padding-right: 60px;
+      padding-left: 80px;
+      padding-right: 80px;
   }
   .gameImg
   {
@@ -66,4 +66,7 @@
     text-align: start;
     padding: 0px 10px;
     border-radius: 50px;
+  }
+  .gameSwiper{
+    border-radius: 20px;
   }
