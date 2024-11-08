@@ -76,7 +76,7 @@
   }
   .input:focus {
     outline: none;
-    color: #3A0099;
+    color: #fff;
     border-color: #3A0099;
     box-shadow: 0 0 0 3px #2809589e;
   }

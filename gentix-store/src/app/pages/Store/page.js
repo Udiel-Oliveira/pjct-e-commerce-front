@@ -49,8 +49,9 @@ export default function HomePage() {
 
   if (isLoading) {
     return (
-      <div className={styles.page}>
-        <p>loading</p>
+      <div className={styles.pageLoading}>
+        <img src="/assets/Loading.gif" alt="" />
+        <p>CARREGANDO</p>
       </div>
     );
   }

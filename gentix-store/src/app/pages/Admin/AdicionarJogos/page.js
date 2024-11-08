@@ -46,7 +46,10 @@ export default function AddJogos(){
     };
   
     if (marksLoading || categoriesLoading) {
-      return <div className={styles.loading}>Carregando...</div>;
+      return <div className={styles.pageLoading}>
+        <img src="/assets/Loading.gif" alt="" />
+        <p>CARREGANDO</p>
+      </div>;
     }
 
     return (

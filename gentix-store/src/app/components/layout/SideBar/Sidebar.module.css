@@ -2,8 +2,8 @@
 .sideBar{
     width: 13%;
     height: 100%;
-    backdrop-filter: blur(20px);
     z-index: 1000;
+    color: white;
 }
 .container
 {
@@ -124,7 +124,7 @@
 }
 .logoutLogo{
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
     color: red;
     width: 70%;
     align-items: center;

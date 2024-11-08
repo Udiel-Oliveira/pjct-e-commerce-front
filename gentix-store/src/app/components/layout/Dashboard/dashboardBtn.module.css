@@ -16,7 +16,7 @@
   }
   
   .content:hover {
-    background-color: rgb(39, 39, 42); 
+    background: linear-gradient(to right, #6100FF, #3A0099);
   }
   
   .container {
