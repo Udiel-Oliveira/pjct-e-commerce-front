@@ -3,12 +3,12 @@ import Button from "../components/BtnSlide";
 import styles from './gameslide.module.css';
 import { faDownload, faPlay } from '@fortawesome/free-solid-svg-icons';
 
-export default function GameSlide({ title, description, tags1, tags2 }) {
+export default function GameSlide({ title, description, price, mark, category }) {
   return (
         <div className={styles.swiperContent}>
             <div className={styles.tagsContainer}>
-                <span>{tags1}</span>
-                <span>{tags2}</span>
+                <span>{category}</span>
+                <span>{category}</span>
             </div>
 
             <div className={styles.infoGame}>

@@ -1,53 +1,68 @@
-"use client";
+'use client';
 
+import { useState, useEffect } from 'react';
 import NavBar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
-import GameSlide from "../../components/GameSlide";
-import styles from "../Store/store.module.css";
+import GameSlide from "@/app/components/GameSlide";
+import GameShowcase from "../../components/GameShowCase";
+import { useGames } from '../../context/GamesContext';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import React, { useRef, useEffect } from 'react';
-import GameShowcase from "@/app/components/GameShowCase";
+import styles from "./store.module.css";
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 export default function HomePage() {
-  const slidesData = [
-    {
-      tags1: "Ação",
-      tags2: "Aventura",
-      title: "Machi's Quest",
-      description: "Subway Money é um jogo eletrizante de corrida infinita que desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.",
-      backgroundImage: "/assets/jogo1.svg"
-    },
-    {
-      tags1: "Estratégia",
-      tags2: "Survival",
-      title: "SubwaySurfes",
-      description: "Subway Money é um jogo eletrizante de corrida infinita que desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.",
-      backgroundImage: "/assets/jogo1.svg"
-    },
-    {
-      tags1: "Mundo Aberto",
-      tags2: "Puzzle",
-      title: "Machi's Quest",
-      description: "Subway Money é um jogo eletrizante de corrida infinita que desvia os jogadores de obstáculos urbanos. O objetivo principal é correr o máximo.",
-      backgroundImage: "/assets/jogo1.svg"
-    },
+  const { games, updateGames } = useGames();
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadGames = async () => {
+      try {
+        await updateGames();
+        setError(null);
+      } catch (err) {
+        console.error('Error loading games:', err);
+        setError('Falha ao carregar jogos.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadGames();
+  }, [updateGames]);
+
+  const carouselGames = games?.slice(0, 5) || [];
+  const showcaseGames = games?.slice(0) || [
+    { tag: "Tipo", title: "Jogo 1", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
+    { tag: "Tipo", title: "Jogo 2", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
+    { tag: "Tipo", title: "Jogo 3", price: "R$000,00", backgroundImage: "/assets/jogo1.svg"},
+    { tag: "Tipo", title: "Jogo 4", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
+    { tag: "Tipo", title: "Jogo 5", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
+    { tag: "Tipo", title: "Jogo 6", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
+    { tag: "Tipo", title: "Jogo 7", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
+    { tag: "Tipo", title: "Jogo 8", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
   ];
 
-  const mainGamesData = [
-    { tag: "Tipo", title: "Jogo 1", price: "R$000,00", backgroundImage: "" },
-    { tag: "Tipo", title: "Jogo 2", price: "R$000,00", backgroundImage: "" },
-    { tag: "Tipo", title: "Jogo 3", price: "R$000,00", backgroundImage: "" },
-    { tag: "Tipo", title: "Jogo 4", price: "R$000,00", backgroundImage: "" },
-    { tag: "Tipo", title: "Jogo 5", price: "R$000,00", backgroundImage: "" },
-    { tag: "Tipo", title: "Jogo 6", price: "R$000,00", backgroundImage: "" },
-    { tag: "Tipo", title: "Jogo 7", price: "R$000,00", backgroundImage: "" },
-    { tag: "Tipo", title: "Jogo 8", price: "R$000,00", backgroundImage: "" },
-    
-  ];
+  if (isLoading) {
+    return (
+      <div className={styles.page}>
+        <p>loading</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.page}>
-      <NavBar />
+      <NavBar/>
+      {error && (
+        <div className={styles.errorAlert}>
+          {error}
+        </div>
+      )}
       <div className={styles.swiperContainer}>
         <Swiper
           spaceBetween={30}
@@ -60,16 +75,24 @@ export default function HomePage() {
           navigation={false}
           modules={[Autoplay, Pagination, Navigation]}
           className={styles.mySwiper}
-          slidesPerGroupAuto={5}
         >
-          {slidesData.map((slide, index) => (
-            <SwiperSlide key={index} className={styles.SwiperSlide} style={{ backgroundImage: `url(${slide.backgroundImage})` }}>
-              <GameSlide title={slide.title} description={slide.description} tags1={slide.tags1} tags2={slide.tags2} />
+          {carouselGames.map((game, index) => (
+            <SwiperSlide key={game?.id || index} className={styles.SwiperSlide}
+            style={{ backgroundImage: `url(${games.backgroundImage})` }}
+            >
+              <GameSlide
+                title={game?.title}
+                description={game?.description}
+                price={game?.price}
+                mark={game?.mark?.name}
+                category={game?.category?.name}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-        <GameShowcase games={mainGamesData} />
+
+      <GameShowcase games={showcaseGames} />
       <Footer />
     </div>
   );

@@ -30,3 +30,17 @@
     height: 95%;
     background-repeat: no-repeat;
 }
+.loadingContainer
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(to right,blueviolet, rgb(77, 30, 121));
+}
+.loadingContainer p
+{
+    font-size: 30px;
+    color: #fff;
+}

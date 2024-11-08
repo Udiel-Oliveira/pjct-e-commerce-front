@@ -1,0 +1,171 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    width: 100%;
+    color: #000000;
+    flex-direction: column;
+    background-color: #000000;
+  }
+  
+  .main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    width: 100%;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .pageTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5E5F61;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #5E5F61;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  
+  .label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #5E5F61;
+    padding-bottom: 0.5rem;
+  }
+  
+  .input {
+    padding: 0.75rem;
+    border: 3px solid #202123;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background-color: #141517;
+  }
+  .inputField{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .input:focus {
+    outline: none;
+    color: #3A0099;
+    border-color: #3A0099;
+    box-shadow: 0 0 0 3px #2809589e;
+  }
+  
+  .textarea {
+    composes: input;
+    max-height: 15rem;
+    resize: vertical;
+    min-height: 15rem;
+  }
+  
+  .select {
+    composes: input;
+    background-color: #141517;
+    cursor: pointer;
+  }
+  
+  .priceInput {
+    composes: input;
+    padding-left: 2rem;
+    width: 100%;
+  }
+  
+  .priceWrapper {
+    position: relative;
+  }
+  
+  .priceCurrency {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3A0099;
+  }
+  
+  .button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .primaryButton {
+    composes: button;
+    background-color: #3A0099;
+    color: white;
+  }
+  
+  .primaryButton:hover {
+    background-color: #6100FF;
+  }
+  
+  .secondaryButton {
+    composes: button;
+    background-color: #718096;
+    color: white;
+  }
+  
+  .secondaryButton:hover {
+    background-color: #4a5568;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .error {
+    color: #e53e3e;
+    padding: 0.75rem;
+    border-radius: 6px;
+    background-color: #fff5f5;
+    border: 1px solid #feb2b2;
+    margin-bottom: 1rem;
+  }
+  
+  .success {
+    color: #38a169;
+    padding: 0.75rem;
+    border-radius: 6px;
+    background-color: #f0fff4;
+    border: 1px solid #9ae6b4;
+    margin-bottom: 1rem;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #4a5568;
+  }

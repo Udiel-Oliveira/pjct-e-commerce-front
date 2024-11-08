@@ -1,4 +1,5 @@
 import "./globals.css";
+import { GamesProvider } from '../app/context/GamesContext';
 
 export const metadata = {
   title: "KumStore",
@@ -9,7 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <GamesProvider>
         {children}
+        </GamesProvider>
       </body>
     </html>
   );

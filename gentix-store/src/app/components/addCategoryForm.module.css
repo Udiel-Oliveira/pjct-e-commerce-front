@@ -1,0 +1,64 @@
+/* components/AddCategoryForm.module.css */
+.form {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+
+.error {
+  color: #ff4444;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 68, 68, 0.1);
+  border-radius: 4px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #45a049;
+}
+
+.submitButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

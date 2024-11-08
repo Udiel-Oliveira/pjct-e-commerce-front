@@ -5,7 +5,6 @@
   
   .customPrev,
   .customNext {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +15,9 @@
     width: 35px;
     border-radius: 50%;
     cursor: pointer;
+  }
+  .gameCard{
+    height: 60vh;
   }
   .customPrev:hover,
   .customNext:hover{

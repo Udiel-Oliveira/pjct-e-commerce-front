@@ -1,7 +1,11 @@
 // components/GameShowcase.js
+'use client';
+
 import { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
+import Image from 'next/image';
+import Link from 'next/link';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -13,30 +17,84 @@ const GameShowcase = ({ games }) => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
-    const swiperInstance = swiperRef.current.swiper;
-    swiperInstance.navigation.init();
-    swiperInstance.navigation.update();
+    if (swiperRef.current && swiperRef.current.swiper) {
+      const swiperInstance = swiperRef.current.swiper;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
   }, []);
 
   const goToNextSlides = () => {
-    if (swiperRef.current) {
+    if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideTo(swiperRef.current.swiper.activeIndex + 4);
     }
   };
 
   const goToPrevSlides = () => {
-    if (swiperRef.current) {
+    if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideTo(swiperRef.current.swiper.activeIndex - 4);
     }
   };
+
+  const formatPrice = (price) => {
+    if (!price) return 'Preço indisponível';
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(price);
+  };
+
+  // Verifica se há jogos antes de renderizar
+  if (!games || games.length === 0) {
+    return (
+      <div className={styles.mainGames}>
+        <div className={styles.titleSec}>
+          <h1>Principais Jogos</h1>
+          <div className={styles.customNavigation}>
+              <button 
+                onClick={goToPrevSlides} 
+                ref={prevRef} 
+                className={styles.customPrev}
+                aria-label="Previous games"> 
+                ◀
+              </button>
+              <button 
+                onClick={goToNextSlides} 
+                ref={nextRef} 
+                className={styles.customNext}
+                aria-label="Next games">
+                ▶
+              </button>
+          </div>
+        </div>
+        <div className={styles.noGames}>
+            <h3>Nenhum jogo disponivel</h3>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.mainGames}>
       <div className={styles.titleSec}>
         <h1>Principais Jogos</h1>
         <div className={styles.customNavigation}>
-          <div onClick={goToPrevSlides} ref={prevRef} className={styles.customPrev}>◀</div>
-          <div onClick={goToNextSlides} ref={nextRef} className={styles.customNext}>▶</div>
+          <button 
+            onClick={goToPrevSlides} 
+            ref={prevRef} 
+            className={styles.customPrev}
+            aria-label="Previous games"
+          >
+            ◀
+          </button>
+          <button 
+            onClick={goToNextSlides} 
+            ref={nextRef} 
+            className={styles.customNext}
+            aria-label="Next games"
+          >
+            ▶
+          </button>
         </div>
       </div>
 
@@ -44,7 +102,25 @@ const GameShowcase = ({ games }) => {
         ref={swiperRef}
         slidesPerView={4}
         spaceBetween={30}
-        loop={false}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+          },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30
+          }
+        }}
+        loop={games.length > 4}
         pagination={false}
         navigation={{
           nextEl: nextRef.current,
@@ -60,21 +136,23 @@ const GameShowcase = ({ games }) => {
         className={styles.gameSwiper}
       >
         {games.map((game, index) => (
-          <SwiperSlide
-            key={index}
-            className={styles.swiperSlide}
-          >
-            <div className={styles.gameImg} style={{
-              backgroundImage: `url(${game.backgroundImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}>
-              <span className={styles.tags}>{game.tag}</span>
-            </div>
-            <div className={styles.infoCard}>
-              <h1>{game.title}</h1>
-              <span className={styles.price}>{game.price}</span>
-            </div>
+          <SwiperSlide key={game.id || index} className={styles.swiperSlide}>
+            <Link href={"/"} className={styles.gameLink}>
+              <div className={styles.gameCard}>
+                <div className={styles.gameImg}
+                style={{
+                    backgroundImage: `url(${game.backgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}>                 
+                  {game.tags1 && <span className={styles.tags}>{game.category}</span>}
+                </div>
+                <div className={styles.infoCard}>
+                  <h2>{game.title}</h2>
+                  <span className={styles.price}>{formatPrice(game.price)}</span>
+                </div>
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
