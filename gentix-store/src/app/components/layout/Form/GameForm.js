@@ -1,17 +1,44 @@
-import { useState } from 'react';
-import styles from "../Form/gameForm.module.css"
+import { useState, useEffect } from 'react';
+import styles from "../Form/gameForm.module.css";
 
-export function GameForm({ marks, categories, onSubmit }) {
+export function GameForm({ marks, categories, onSubmit, onFormChange }) {
   const [gameData, setGameData] = useState({
     title: '',
     description: '',
     price: 0,
     mark: { id: 0, name: '' },
-    category: { id: 0, name: '' }
+    category: { id: 0, name: '' },
+    image: null,
   });
 
+  const [previewImage, setPreviewImage] = useState(null);
+
+  useEffect(() => {
+    onFormChange({
+      title: gameData.title,
+      description: gameData.description,
+      price: gameData.price,
+      mark: gameData.mark,
+      category: gameData.category,
+      image: previewImage,  // Passar apenas a URL da imagem
+    });
+  }, [gameData.title, gameData.description, gameData.price, gameData.mark, gameData.category, previewImage]);
+
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, files } = e.target;
+
+    if (name === "image") {
+      const file = files[0];
+      if (file) {
+        setPreviewImage(URL.createObjectURL(file));
+        setGameData(prev => ({
+          ...prev,
+          image: file
+        }));
+      }
+      return;
+    }
+
     if (name.includes('.')) {
       const [parent, child] = name.split('.');
       setGameData(prev => ({
@@ -60,20 +87,18 @@ export function GameForm({ marks, categories, onSubmit }) {
       <div className={styles.grid}>
         
         <div className={styles.formGroup}>
-        <div className={styles.inputField}>
-          <label htmlFor="chose" className={styles.label}>
-            Adiconar uma imagem
-          </label>
-          <input
-            type="file"
-            id="chose"
-            name="chose"
-            value={gameData.chose}
-            onChange={handleInputChange}
-            className={styles.input}
-          />
-        </div>
-  
+          <div className={styles.inputField}>
+            <label htmlFor="image" className={styles.label}>
+              Adiconar uma imagem
+            </label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              onChange={handleInputChange}
+              className={styles.input}
+            />
+          </div>
         </div>
 
         <div className={styles.formGroup}>
@@ -88,30 +113,29 @@ export function GameForm({ marks, categories, onSubmit }) {
               value={gameData.title}
               onChange={handleInputChange}
               required
+              maxLength={150}
               className={styles.input}
             />
           </div>
 
-
           <div className={styles.inputField}>
-          <label htmlFor="price" className={styles.label}>
-            Preço
-          </label>
-          <div className={styles.priceWrapper}>
-            <span className={styles.priceCurrency}>R$</span>
-            <input
-              type="number"
-              id="price"
-              name="price"
-              value={gameData.price}
-              onChange={handleInputChange}
-              required
-              step="0.01"
-              min="0"
-              className={styles.priceInput}
-            />
-          </div>
-         
+            <label htmlFor="price" className={styles.label}>
+              Preço
+            </label>
+            <div className={styles.priceWrapper}>
+              <span className={styles.priceCurrency}>R$</span>
+              <input
+                type="number"
+                id="price"
+                name="price"
+                value={gameData.price}
+                onChange={handleInputChange}
+                required
+                step="0.01"
+                min="0"
+                className={styles.priceInput}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -130,12 +154,9 @@ export function GameForm({ marks, categories, onSubmit }) {
             className={styles.textarea}
           />
         </div>
-        
       </div>
 
       <div className={styles.grid}>
-
-
         <div className={styles.formGroup}>
           <div className={styles.inputField}>
             <label htmlFor="mark.id" className={styles.label}>

@@ -12,13 +12,13 @@
     color: white;
     padding: 1rem;
     border-radius: 0.75rem;
-    transition: background-color 0.2s;
   }
   
   .content:hover {
+    color: #fff;
     background: linear-gradient(to right, #6100FF, #3A0099);
   }
-  
+
   .container {
     display: flex;
     align-items: center;

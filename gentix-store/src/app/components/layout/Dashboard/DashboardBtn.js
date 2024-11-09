@@ -2,11 +2,12 @@
 import styles from './dashboardBtn.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
-export default function DashboardButton({titulo = "Empresa", icon, icon2}) {
+export default function DashboardButton({titulo = "Empresa", icon, icon2, link = "/dashboard"}) {
   return (
     <div className={styles.btnContainer}>
-      <button className={styles.content}>
+      <Link href={link} className={styles.content}>
         <div className={styles.container}>
           <div className={styles.iconContainer}>
             <FontAwesomeIcon 
@@ -25,7 +26,7 @@ export default function DashboardButton({titulo = "Empresa", icon, icon2}) {
             className={styles.icons}
           />
         </div>
-      </button>
+      </Link>
     </div>
   );
 }

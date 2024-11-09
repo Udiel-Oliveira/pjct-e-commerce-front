@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <NavBar/>
-      <SideBar/>
       <div className={styles.page}>
 
       </div>

@@ -36,9 +36,9 @@ export default function Dashboard() {
           </div>
           
           <div className={styles.btnContainer}>
-            <DashboardButton titulo={"CATEGORIAS"} icon={faSitemap}/>
+            <DashboardButton titulo={"CATEGORIAS"} icon={faSitemap} />
             <DashboardButton titulo={"EMPRESA"} icon={faBuilding}/>
-            <DashboardButton titulo={"JOGOS"}  icon={faGamepad}/>
+            <DashboardButton titulo={"JOGOS"}  icon={faGamepad} link='AdicionarJogos'/>
           </div>
           <div className={styles.tables}>
               <div className={styles.empresasTable}>
