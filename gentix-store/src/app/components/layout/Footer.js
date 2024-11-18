@@ -12,24 +12,29 @@ export default function Footer() {
           <div className={styles.itenTitle}>
 
             <div className={styles.logo}>
-              <img src="/assets/logoHome.png" alt='Logo-Home' className={styles.logo_img} ></img>
+            <Link href="https://kumstore.vercel.app/"><img src="/assets/logoHome.png" alt='Logo-Home' className={styles.logo_img} ></img></Link>
+              
               <h4 className={styles.txtLinkTitle1}>GenTix Store</h4>
             </div>
             <div className={styles.map}>
-              <h3 className={styles.txtLinkTitle2}>Jogos feito pela Nostalgix</h3> 
-              <p className={styles.txtLink} >Investimentos legais</p>
-              <p className={styles.txtLink} >Investimentos legais</p>
-              <p className={styles.txtLink} >Investimentos legais</p>
+            <Link href="https://kumstore.vercel.app" target="_blank"><p className={styles.txtLink} >Loja</p></Link>
+
+            <Link href="" target="_blank"> <p className={styles.txtLink} >Biblioteca</p></Link>
+
             </div>
 
           </div>
         </div>
 
         <div className={styles.autors_title_git}>
+          
 
           <div className={styles.itens}>
-            <h6>Todos os direitos reservados a GenTIx - 2024</h6>
-            <FontAwesomeIcon icon={faGithub} className={styles.icon} />
+            
+            <h6>Todos os direitos reservados a <Link href="https://kumstore.vercel.app/">GenTix Store - 2024</Link></h6>
+            <Link href="https://github.com/Udiel-Oliveira/pjct-e-commerce-front" target="_blank"><FontAwesomeIcon icon={faGithub} className={styles.icon} /></Link>
+            
+            
           </div> 
 
         </div>
