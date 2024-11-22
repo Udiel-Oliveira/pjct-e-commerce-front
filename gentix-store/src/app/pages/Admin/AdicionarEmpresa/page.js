@@ -3,10 +3,8 @@
 import { useState, useCallback } from "react";
 import styles from "./addEmpresa.module.css";
 import SideBar from '@/app/components/layout/SideBar/SideBar';
-import { useGames } from "@/app/context/GamesContext";
 import { EntityTable } from '@/app/components/layout/Tables/EntidadeTable';
 import { useEntityData } from "@/app/hooks/useEntidadeData";
-import { GameForm } from "@/app/components/layout/Form/GameForm";
 import Loading from "@/app/components/Load";
 
 export default function AddEmpresa() {
