@@ -84,10 +84,7 @@ export default function NavBar() {
           </Link>
         </li>
 
-        <div className={styles.searchInput}>
-          <img src="/assets/lupa.svg" alt="" />
-          <input type="search" placeholder="Pesquisar..." />
-        </div>
+      
       </ul>
 
       <div className={styles.user}>
