@@ -1,12 +1,17 @@
 import NavBar from "@/app/components/layout/NavBar/Navbar";
 import styles from "../Biblioteca/biblioteca.module.css"
-//seu gay, a nav ta ali so pra visualização 
+import Footer from "@/app/components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <NavBar/>             
-      Biblioteca
+    <div>
+    <NavBar/>
+      <div className={styles.page}>
+        <h4  className={styles.title}>Meus jogos</h4>
+      </div>
+     <Footer/>
     </div>
+
+    
   );
 }
