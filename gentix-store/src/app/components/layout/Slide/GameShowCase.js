@@ -4,7 +4,6 @@
 import { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
-import Image from 'next/image';
 import Link from 'next/link';
 import 'swiper/css';
 import 'swiper/css/pagination';

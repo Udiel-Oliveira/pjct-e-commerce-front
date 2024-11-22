@@ -1,4 +1,4 @@
-import NavBar from "@/app/components/layout/Navbar";
+import NavBar from "@/app/components/layout/NavBar/Navbar";
 import styles from "../Games/games.module.css"
 //seu gay, a nav ta ali so pra visualização 
 

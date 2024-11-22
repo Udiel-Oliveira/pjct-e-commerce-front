@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import styles from "../Form/gameForm.module.css";
+import React, { useState, useEffect } from 'react';
+import styles from "./gameForm.module.css";
 
 export function GameForm({ marks, categories, onSubmit, onFormChange }) {
   const [gameData, setGameData] = useState({
@@ -12,17 +12,15 @@ export function GameForm({ marks, categories, onSubmit, onFormChange }) {
   });
 
   const [previewImage, setPreviewImage] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     onFormChange({
-      title: gameData.title,
-      description: gameData.description,
-      price: gameData.price,
-      mark: gameData.mark,
-      category: gameData.category,
-      image: previewImage,  // Passar apenas a URL da imagem
+      ...gameData,
+      image: previewImage,
     });
-  }, [gameData.title, gameData.description, gameData.price, gameData.mark, gameData.category, previewImage]);
+  }, [gameData, previewImage, onFormChange]);
 
   const handleInputChange = (e) => {
     const { name, value, files } = e.target;
@@ -39,16 +37,25 @@ export function GameForm({ marks, categories, onSubmit, onFormChange }) {
       return;
     }
 
+    if (name === "price") {
+      const numericValue = parseFloat(value.replace(',', '.'));
+      setGameData(prev => ({
+        ...prev,
+        [name]: isNaN(numericValue) ? 0 : numericValue,
+      }));
+      return;
+    }
+
     if (name.includes('.')) {
       const [parent, child] = name.split('.');
       setGameData(prev => ({
         ...prev,
-        [parent]: { ...prev[parent], [child]: value }
+        [parent]: { ...prev[parent], [child]: value },
       }));
     } else {
       setGameData(prev => ({
         ...prev,
-        [name]: name === 'price' ? parseFloat(value) : value
+        [name]: value,
       }));
     }
   };
@@ -68,34 +75,100 @@ export function GameForm({ marks, categories, onSubmit, onFormChange }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await onSubmit({
-      ...gameData,
-      creationDate: new Date().toISOString(),
-      updateDate: new Date().toISOString()
-    });
-    setGameData({
-      title: '',
-      description: '',
-      price: 0,
-      mark: { id: 0, name: '' },
-      category: { id: 0, name: '' }
-    });
+    setIsSubmitting(true);
+    setError(null);
+  
+    try {
+      // Primeiro, enviar os dados do jogo para criar o registro
+      const gamePayload = {
+        title: gameData.title,
+        description: gameData.description,
+        price: gameData.price,
+        mark: { id: gameData.mark.id },
+        category: { id: gameData.category.id }
+      };
+  
+      // Criar o jogo primeiro
+      const gameResponse = await fetch('https://pjct-e-commerce-back.onrender.com/api/game/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(gamePayload),
+      });
+  
+      if (!gameResponse.ok) {
+        const errorData = await gameResponse.json();
+        throw new Error(`Erro ao cadastrar jogo: ${errorData.message || 'Erro desconhecido'}`);
+      }else{
+        console.log("deu certo porra")
+      }
+  
+      const createdGame = await gameResponse.json();
+      console.log('ID do jogo criado:', createdGame.id);
+  
+      // Agora, enviar a imagem com o ID do jogo
+      if (gameData.image) {
+        const formData = new FormData();
+        formData.append('file', gameData.image);
+        console.log('Dados do FormData:', formData.get('file'));
+
+        const imageResponse = await fetch(
+          `https://pjct-e-commerce-back.onrender.com/api/gameimage/?game=${createdGame.id}`,
+          {
+            method: 'POST',
+            body: formData,
+          }
+        );
+  
+        if (!imageResponse.ok) {
+          const errorData = await imageResponse.json();
+          throw new Error(`Erro ao cadastrar imagem: ${errorData.message || 'Erro desconhecido'}`);
+        }
+      }
+  
+      // Limpar o formulário após sucesso
+      setGameData({
+        title: '',
+        description: '',
+        price: 0,
+        mark: { id: 0, name: '' },
+        category: { id: 0, name: '' },
+        image: null,
+      });
+      setPreviewImage(null);
+  
+      // Chamar o callback de sucesso
+      onSubmit && onSubmit({ ...createdGame, image: gameData.image });
+  
+    } catch (err) {
+      setError(err.message);
+      console.error('Erro ao cadastrar:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
+      {error && (
+        <div className={styles.error}>
+          {error}
+        </div>
+      )}
+
       <div className={styles.grid}>
-        
         <div className={styles.formGroup}>
           <div className={styles.inputField}>
             <label htmlFor="image" className={styles.label}>
-              Adiconar uma imagem
+              Adicionar uma imagem
             </label>
             <input
               type="file"
               id="image"
               name="image"
               onChange={handleInputChange}
+              accept="image/*"
               className={styles.input}
             />
           </div>
@@ -198,8 +271,12 @@ export function GameForm({ marks, categories, onSubmit, onFormChange }) {
         </div>
       </div>
 
-      <button type="submit" className={styles.primaryButton}>
-        Cadastrar Jogo
+      <button 
+        type="submit" 
+        className={styles.primaryButton}
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Cadastrando...' : 'Cadastrar Jogo'}
       </button>
     </form>
   );

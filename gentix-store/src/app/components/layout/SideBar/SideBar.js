@@ -36,7 +36,7 @@ export default function SideBar(){
                             <FontAwesomeIcon icon={faSitemap} className={styles.icons}/>
                             <li>Categorias</li>
                         </Link>
-                        <Link href={'/empresas'} className={`${styles.links} ${currentRoute === '/pages/Admin/Empresas' ? styles.linksActive : ''}`}>
+                        <Link href={'AdicionarEmpresa'} className={`${styles.links} ${currentRoute === '/pages/Admin/Empresas' ? styles.linksActive : ''}`}>
                             <FontAwesomeIcon icon={faBuilding} className={styles.icons} style={{width: "20px"}}/>
                             <li>Empresas</li>
                         </Link>
@@ -62,7 +62,7 @@ export default function SideBar(){
             </div>
             <div className={styles.logout}>
                 <h3>Configurações</h3>
-                <Link href="/pages/Store" className={`${styles.links} ${currentRoute.includes('/pages/Store') ? styles.activeLink : ''}`}>
+                <Link href="/pages/Store">
                     <div className={styles.logoutLogo}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} style={{width: "20px"}} />
                         <p>Sair</p>

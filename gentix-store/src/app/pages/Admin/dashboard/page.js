@@ -1,4 +1,3 @@
-// app/admin/dashboard/page.js
 "use client";
 
 import SideBar from '@/app/components/layout/SideBar/SideBar';
@@ -8,8 +7,33 @@ import DashboardButton from '@/app/components/layout/Dashboard/DashboardBtn';
 import { faArrowRight, faBuilding, faGamepad, faSitemap } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useGames } from '@/app/context/GamesContext';
+import { EntityTable } from '@/app/components/layout/Tables/EntidadeTable';
+import { useEntityData } from '@/app/hooks/useEntidadeData';
+import Loading from '@/app/components/Load';
 
 export default function Dashboard() {
+
+  const {
+    data: marks,
+    loading: marksLoading,
+    error: marksError,
+    addEntity: addMark
+  } = useEntityData('mark')
+
+  const { 
+    data: categories, 
+    loading: categoriesLoading, 
+    error: categoriesError, 
+    addEntity: addCategory 
+  } = useEntityData('category');
+
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleString();
+  };
+
+  if (marksLoading || categoriesLoading) {
+    return <Loading/>
+  }
 
   return (
     <div className={styles.body} >
@@ -42,10 +66,10 @@ export default function Dashboard() {
           </div>
           <div className={styles.tables}>
               <div className={styles.empresasTable}>
-
+                  <EntityTable data={marks} formatDate={formatDate} title={'Empresas'}/>
               </div>
               <div className={styles.categoriasTable}>
-
+                  <EntityTable data={categories} formatDate={formatDate} title={'Categorias'}/>
               </div>
           </div>
 

@@ -1,5 +1,5 @@
 "use client";
-import Button from "../components/BtnSlide";
+import Button from "./BtnSlide";
 import styles from './gameslide.module.css';
 import { faDownload, faPlay } from '@fortawesome/free-solid-svg-icons';
 

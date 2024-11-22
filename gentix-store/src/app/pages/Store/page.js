@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import NavBar from "@/app/components/layout/Navbar";
-import Footer from "@/app/components/layout/Footer";
-import GameSlide from "@/app/components/GameSlide";
-import GameShowcase from "../../components/GameShowCase";
+import NavBar from "@/app/components/layout/NavBar/Navbar";
+import Footer from '@/app/components/layout/Footer/Footer';
+import GameSlide from "@/app/components/layout/Slide/GameSlide";
+import GameShowcase from "../../components/layout/Slide/GameShowCase";
 import { useGames } from '../../context/GamesContext';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -35,17 +35,8 @@ export default function HomePage() {
     loadGames();
   }, [updateGames]);
 
-  const carouselGames = games?.slice(0, 5) || [];
-  const showcaseGames = games?.slice(0) || [
-    { tag: "Tipo", title: "Jogo 1", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
-    { tag: "Tipo", title: "Jogo 2", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
-    { tag: "Tipo", title: "Jogo 3", price: "R$000,00", backgroundImage: "/assets/jogo1.svg"},
-    { tag: "Tipo", title: "Jogo 4", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
-    { tag: "Tipo", title: "Jogo 5", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
-    { tag: "Tipo", title: "Jogo 6", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
-    { tag: "Tipo", title: "Jogo 7", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
-    { tag: "Tipo", title: "Jogo 8", price: "R$000,00", backgroundImage: "/assets/jogo1.svg" },
-  ];
+  const carouselGames = games?.slice(5, 10) || [];
+  const showcaseGames = games?.slice(0) || [];
 
   if (isLoading) {
     return (

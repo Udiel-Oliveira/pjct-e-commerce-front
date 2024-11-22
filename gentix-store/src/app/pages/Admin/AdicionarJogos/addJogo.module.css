@@ -92,6 +92,14 @@
         transform: translateX(0px);
     }
 }
+@keyframes aparecer2 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 /*Game Preview*/
 
@@ -137,4 +145,17 @@
 .previewText h1
 {
     font-size: xx-large;
+}
+
+.boa
+{
+    background-color: #3A0099;
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: aparecer2 2s linear ;
 }

@@ -1,0 +1,115 @@
+.table {
+    height: 100%;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 12px;
+    animation: aparecer 0.5s linear;
+}
+
+.titleTable {
+    padding: 15px 20px;
+    width: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.titleTable h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.trCabecalho, .trBody {
+    display: flex;
+    width: 100%;
+    padding: 12px 20px;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.trCabecalho th {
+    color: #888888;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.trBody{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trCabecalho th, .trBody td {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* Ajustando os tamanhos específicos das colunas */
+.trCabecalho th:first-child, 
+.trBody td:first-child {
+    flex: 0.5; /* Coluna ID menor */
+}
+.trBody td:first-child {
+    color: #5000D4;
+}
+
+.backTag
+{
+    color: #5000D4;
+    border-radius: 20px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #F6F5FC;
+}
+
+.trCabecalho th:nth-child(2), 
+.trBody td:nth-child(2) {
+    flex: 1; /* Coluna EMPRESA maior */
+    justify-content: center; /* Alinha o texto à esquerda */
+}
+
+.trBody {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trBody:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+@keyframes aparecer {
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.arrowBtn {
+    display: flex;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    align-items: center;
+    font-size: 10px;
+    color: #5000D4; 
+    transition: all 0.5s ease-in-out;
+  }
+.arrowBtn:hover{
+background-color: #171717a6;
+}
+
+  .icons {
+    width: 1rem;
+    height: 1rem;
+  }

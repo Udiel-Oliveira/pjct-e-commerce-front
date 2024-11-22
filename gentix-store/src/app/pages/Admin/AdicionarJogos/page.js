@@ -6,23 +6,54 @@ import SideBar from '@/app/components/layout/SideBar/SideBar';
 import { useGames } from "@/app/context/GamesContext";
 import { useEntityData } from "@/app/hooks/useEntidadeData";
 import { GameForm } from "@/app/components/layout/Form/GameForm";
+import Loading from "@/app/components/Load";
 
 export default function AddJogos() {
+  const [showSuccess, setShowSuccess] = useState(false);
   const [previewData, setPreviewData] = useState({
     title: 'Nome do Jogo',
     price: 0,
     category: { name: 'Categoria' },
-    image: null
+    image: File
   });
 
   const { updateGames } = useGames();
   const { data: marks, loading: marksLoading, error: marksError } = useEntityData('mark');
   const { data: categories, loading: categoriesLoading, error: categoriesError } = useEntityData('category');
 
+  const handleImageSubmit = async (gameData) => {
+    try {
+      const formData = new FormData();
+      formData.append("file", gameData.image); // Arquivo da imagem.
+
+      const response = await fetch(`https://pjct-e-commerce-back.onrender.com/api/gameimage/?game=${gameData.id}`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Erro no cadastro da imagem:", errorData);
+        throw new Error('Erro ao cadastrar imagem');
+      }
+
+      await updateGames(); // Atualiza os dados do contexto global.
+    } catch (error) {
+      console.error('Erro ao cadastrar imagem:', error);
+      alert('Erro ao cadastrar a imagem. Tente novamente.');
+    }
+
+    console.log('Dados do jogo antes do envio:', gameData);
+    console.log('ID do jogo criado:', gameData.id);
+    console.log('Imagem do jogo:', gameData.image);
+  };
+
   const handleFormChange = useCallback((data) => {
+    const formattedPrice = parseFloat(data.price || 0).toFixed(2).replace('.', ',');
+
     setPreviewData({
       title: data.title || 'Nome do Jogo',
-      price: data.price || 0,
+      price: data.price,
       category: data.category,
       image: data.image
     });
@@ -30,7 +61,7 @@ export default function AddJogos() {
 
   const handleGameSubmit = async (gameData) => {
     try {
-
+      // Envia os dados do jogo
       const data = {
         title: gameData.title,
         description: gameData.description,
@@ -40,7 +71,7 @@ export default function AddJogos() {
         creationDate: new Date().toISOString(),
         updateDate: new Date().toISOString(),
       };
-  
+
       const response = await fetch('https://pjct-e-commerce-back.onrender.com/api/game/', {
         method: 'POST',
         headers: {
@@ -48,26 +79,39 @@ export default function AddJogos() {
         },
         body: JSON.stringify(data),
       });
-  
+
       if (!response.ok) {
         const errorData = await response.json();
-        console.error("Detalhes do erro:", errorData);
+        console.error("Erro ao cadastrar jogo:", errorData);
         throw new Error('Erro ao cadastrar jogo');
       }
-  
-      alert('Jogo cadastrado com sucesso!');
-      await updateGames();
+
+      // Após cadastrar o jogo, envia a imagem
+      if (gameData.image) {
+        await handleImageSubmit(gameData);
+      }
+
+      setShowSuccess(true); // Exibe o sucesso após cadastrar
+      setTimeout(() => setShowSuccess(false), 3000); // Esconde o sucesso após 3 segundos
+
+      await updateGames(); // Atualiza os dados do contexto global
     } catch (error) {
-      console.error('Erro ao cadastrar:', error);
+      console.error('Erro ao cadastrar jogo:', error);
       alert('Erro ao cadastrar o jogo. Tente novamente.');
     }
   };
 
   if (marksLoading || categoriesLoading) {
-    return <div className={styles.pageLoading}>
-      <img src="/assets/Loading.gif" alt="" />
-      <p>CARREGANDO</p>
-    </div>;
+    return <Loading />;
+  }
+
+  if (showSuccess) {
+    return (
+      <div className={styles.boa}>
+        <img src="/assets/SuccessCadastro-ezgif.com-optimize.gif" alt="Success" />
+        <h1>Jogo cadastrado com sucesso</h1>
+      </div>
+    );
   }
 
   return (
@@ -75,9 +119,10 @@ export default function AddJogos() {
       <SideBar />
       <div className={styles.page}>
         <div className={styles.previewGameContainer}>
-          <h1>Pré View</h1>
+          <h1>Pré-visualização</h1>
           <div className={styles.gamePreview}>
-            <div className={styles.previewImage}
+            <div
+              className={styles.previewImage}
               style={{
                 backgroundImage: previewData.image ? `url(${previewData.image})` : 'none'
               }}
@@ -88,10 +133,11 @@ export default function AddJogos() {
             </div>
             <div className={styles.previewText}>
               <h1>{previewData.title}</h1>
-              <h2>R$ {previewData.price.toFixed(2).replace('.', ',')}</h2>
+              <h2>R$ {previewData.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h2>
             </div>
           </div>
         </div>
+
         <div className={styles.formContainer}>
           <div className={styles.contentForm}>
             <section className={styles.card}>
@@ -99,15 +145,16 @@ export default function AddJogos() {
               {(marksError || categoriesError) && (
                 <div className={styles.error}>{marksError || categoriesError}</div>
               )}
-              <GameForm 
-                marks={marks} 
-                categories={categories} 
+              <GameForm
+                marks={marks}
+                categories={categories}
                 onSubmit={handleGameSubmit}
                 onFormChange={handleFormChange}
               />
             </section>
           </div>
         </div>
+
       </div>
     </div>
   );

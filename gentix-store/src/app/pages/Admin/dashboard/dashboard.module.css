@@ -104,14 +104,23 @@
     align-items: center;
     flex: 0.5;
     gap: 1rem;
-    animation: aparecer 0.5s linear;
+    animation: aparecer 0.4s linear;
 }
 .tables
 {
     background-color: transparent;
     width: 100%;
     display: flex;
+    gap: 1rem;
     flex: 3;
+}
+.empresasTable{
+    width: 100%;
+    flex: 1;
+}
+.categoriasTable{
+    width: 100%;
+    flex: 1;
 }
 .page{
     display: flex;
