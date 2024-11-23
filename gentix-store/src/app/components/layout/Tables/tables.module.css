@@ -113,3 +113,7 @@ background-color: #171717a6;
     width: 1rem;
     height: 1rem;
   }
+
+  .tableBody{
+    overflow-y: auto;
+  }

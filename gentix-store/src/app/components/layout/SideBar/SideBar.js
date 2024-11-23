@@ -32,7 +32,7 @@ export default function SideBar(){
                             <FontAwesomeIcon icon={faGamepad} className={styles.icons}/>
                             <li>Add Jogo</li>
                         </Link>
-                        <Link href={'/categorias'} className={`${styles.links} ${currentRoute === '/pages/Admin/Categorias' ? styles.linksActive : ''}`}>
+                        <Link href={'AdicionarCategoria'} className={`${styles.links} ${currentRoute === '/pages/Admin/AdicionarCategoria' ? styles.linksActive : ''}`}>
                             <FontAwesomeIcon icon={faSitemap} className={styles.icons}/>
                             <li>Categorias</li>
                         </Link>
