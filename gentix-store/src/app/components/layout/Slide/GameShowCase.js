@@ -1,10 +1,9 @@
-// components/GameShowcase.js
 'use client';
 
 import { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
-import Link from 'next/link';
+import Link from 'next/link'; // Navegação com Link
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -39,35 +38,26 @@ const GameShowcase = ({ games }) => {
     if (!price) return 'Preço indisponível';
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
-      currency: 'BRL'
+      currency: 'BRL',
     }).format(price);
   };
 
-  // Verifica se há jogos antes de renderizar
   if (!games || games.length === 0) {
     return (
       <div className={styles.mainGames}>
         <div className={styles.titleSec}>
           <h1>Principais Jogos</h1>
           <div className={styles.customNavigation}>
-              <button 
-                onClick={goToPrevSlides} 
-                ref={prevRef} 
-                className={styles.customPrev}
-                aria-label="Previous games"> 
-                ◀
-              </button>
-              <button 
-                onClick={goToNextSlides} 
-                ref={nextRef} 
-                className={styles.customNext}
-                aria-label="Next games">
-                ▶
-              </button>
+            <button onClick={goToPrevSlides} ref={prevRef} className={styles.customPrev}>
+              ◀
+            </button>
+            <button onClick={goToNextSlides} ref={nextRef} className={styles.customNext}>
+              ▶
+            </button>
           </div>
         </div>
         <div className={styles.noGames}>
-            <h3>Nenhum jogo disponivel</h3>
+          <h3>Nenhum jogo disponível</h3>
         </div>
       </div>
     );
@@ -78,20 +68,10 @@ const GameShowcase = ({ games }) => {
       <div className={styles.titleSec}>
         <h1>Principais Jogos</h1>
         <div className={styles.customNavigation}>
-          <button 
-            onClick={goToPrevSlides} 
-            ref={prevRef} 
-            className={styles.customPrev}
-            aria-label="Previous games"
-          >
+          <button onClick={goToPrevSlides} ref={prevRef} className={styles.customPrev}>
             ◀
           </button>
-          <button 
-            onClick={goToNextSlides} 
-            ref={nextRef} 
-            className={styles.customNext}
-            aria-label="Next games"
-          >
+          <button onClick={goToNextSlides} ref={nextRef} className={styles.customNext}>
             ▶
           </button>
         </div>
@@ -102,22 +82,10 @@ const GameShowcase = ({ games }) => {
         slidesPerView={4}
         spaceBetween={30}
         breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10
-          },
-          480: {
-            slidesPerView: 2,
-            spaceBetween: 20
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 30
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 30
-          }
+          320: { slidesPerView: 1, spaceBetween: 10 },
+          480: { slidesPerView: 2, spaceBetween: 20 },
+          768: { slidesPerView: 3, spaceBetween: 30 },
+          1024: { slidesPerView: 4, spaceBetween: 30 },
         }}
         loop={games.length > 4}
         pagination={false}
@@ -136,14 +104,27 @@ const GameShowcase = ({ games }) => {
       >
         {games.map((game, index) => (
           <SwiperSlide key={game.id || index} className={styles.swiperSlide}>
-            <Link href={"/"} className={styles.gameLink}>
+            <Link
+              href={{
+                pathname: '/detail', // Corrigido para o caminho correto da página de detalhes
+                query: {
+                  id: game.id,
+                  title: game.title,
+                  description: game.description,
+                  price: game.price,
+                },
+              }}
+              className={styles.gameLink}
+            >
               <div className={styles.gameCard}>
-                <div className={styles.gameImg}
-                style={{
+                <div
+                  className={styles.gameImg}
+                  style={{
                     backgroundImage: `url(${game.backgroundImage})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}>                 
+                    backgroundPosition: 'center',
+                  }}
+                >
                   {game.tags1 && <span className={styles.tags}>{game.category}</span>}
                 </div>
                 <div className={styles.infoCard}>
