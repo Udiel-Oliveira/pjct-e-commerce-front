@@ -14,6 +14,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 100vh;
 }
 .container{
     background-color: #111214;
@@ -30,9 +31,10 @@
 .formContent{
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     flex: 1;
+    gap: 1rem;
     height: 100%;
 }
 
@@ -88,4 +90,45 @@
     100%{
         opacity: 1;
     }
+}
+
+.tipsContainer{
+    flex: 1;
+    display: flex;
+}
+.tipsContainer p{
+    width: 80%;
+    font-size: 30px;
+}
+.tipsContent{
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: start;
+    padding: 50px;
+    background: linear-gradient(to right, #6100FF, #3A0099);
+}
+.tipsContainer p{
+    width: 80%;
+    font-size: 30px;
+}
+
+.btnAddGame{
+    background-color: black;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 0.75rem;
+    transition: all 0.5s ease-in-out;
+}
+.btnAddGame:hover{
+    background-color: #3A0099;
+    padding-right: 7px;
+    gap: 2.5rem;
+    border-radius: 0.75rem;
 }

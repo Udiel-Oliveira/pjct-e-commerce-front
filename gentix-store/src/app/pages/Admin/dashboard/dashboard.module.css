@@ -113,6 +113,7 @@
     display: flex;
     gap: 1rem;
     flex: 3;
+    overflow-y: auto;
 }
 .empresasTable{
     width: 100%;
