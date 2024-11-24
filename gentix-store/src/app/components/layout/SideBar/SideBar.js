@@ -36,7 +36,7 @@ export default function SideBar(){
                             <FontAwesomeIcon icon={faSitemap} className={styles.icons}/>
                             <li>Categorias</li>
                         </Link>
-                        <Link href={'AdicionarEmpresa'} className={`${styles.links} ${currentRoute === '/pages/Admin/Empresas' ? styles.linksActive : ''}`}>
+                        <Link href={'AdicionarEmpresa'} className={`${styles.links} ${currentRoute === '/pages/Admin/AdicionarEmpresa' ? styles.linksActive : ''}`}>
                             <FontAwesomeIcon icon={faBuilding} className={styles.icons} style={{width: "20px"}}/>
                             <li>Empresas</li>
                         </Link>

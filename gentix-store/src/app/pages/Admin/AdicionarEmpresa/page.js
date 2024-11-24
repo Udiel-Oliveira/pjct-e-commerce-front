@@ -1,28 +1,28 @@
 "use client";
 
-import styles from "./addCategoria.module.css";
+import styles from "./addEmpresa.module.css";
 import SideBar from '@/app/components/layout/SideBar/SideBar';
 import { EntityTable } from '@/app/components/layout/Tables/EntidadeTable';
 import { useEntityData } from "@/app/hooks/useEntidadeData";
 import Loading from "@/app/components/Load";
-import AddCategoryForm from "@/app/components/AddCategoryForm";
+import AddEmpresaForm from "@/app/components/AddEmpresaForm";
 
-export default function AddCategoria() {
-  const { 
-    data: categories, 
-    loading: categoriesLoading, 
-    error: categoriesError, 
-    addEntity: addCategory 
-  } = useEntityData('category');
+export default function AddEmpresa() {
+  const {
+    data: marks,
+    loading: marksLoading,
+    error: marksError,
+    addEntity: addMark
+  } = useEntityData('mark')
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString();
   };
 
-  if (categoriesLoading) {
+  if (marksLoading) {
     return <Loading/>
   }
-
+  
   return (
     <div className={styles.body}>
       <SideBar />
@@ -31,14 +31,14 @@ export default function AddCategoria() {
           <div className={styles.formContent}>
             <div className={styles.tipsContainer}>
                 <div className={styles.tipsContent}>
-                  <p>É aqui onde você pode Adicionar Novas Categorias paras os seus Jogos</p>
+                  <p>É Aqui que voce Pode Cadastrar sua Empresa Pra Fazer parte da KumStore!!</p>
                 </div>
               </div>
-            <AddCategoryForm onCategoryAdded={(newCategory) => console.log(newCategory)}/>
+            <AddEmpresaForm onEmpresaAdded={(newEmpresa) => console.log(newEmpresa)}/>
           </div>
           
           <div className={styles.tabela}>
-            <EntityTable data={categories} formatDate={formatDate} title={'Ultimas Categorias'}/>
+            <EntityTable data={marks} formatDate={formatDate} title={'Ultimas Empresas Cadastradas'}/>
           </div>
 
         </div>
