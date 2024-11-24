@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <NavBar/>
       <div className={styles.page}>
-        <h4  className={styles.title}>Meus jogosss</h4>
+        <h4  className={styles.title}>Meus jogo</h4>
       </div>
     <Footer/>
     </div>
