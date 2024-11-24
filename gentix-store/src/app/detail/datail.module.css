@@ -20,7 +20,7 @@
     background-color: aliceblue;
     border-radius: 10px;
     background-size: cover;
-    background-image: url(https://i0.wp.com/twinfinite.net/wp-content/uploads/2020/09/Screen-Shot-2020-09-18-at-3.46.54-PM.jpg?fit=1512%2C970&ssl=1);
+    background-image: url(https://i.ytimg.com/vi/0IJF5HczQoU/maxresdefault.jpg);
 }
 
 .detalhe{
@@ -28,5 +28,42 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
+
+.itens{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.txt{
+
+    margin-top: 1rem;
+}
+
+.btn{
+    margin-top: 2rem;
+}
+
+/* From Uiverse.io by barisdogansutcu */ 
+.button {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: rgb(29, 25, 25);
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+  }
+  
+  .button:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 1px 8px 0px;
+  }
+  
