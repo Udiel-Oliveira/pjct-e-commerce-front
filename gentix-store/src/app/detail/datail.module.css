@@ -1,3 +1,7 @@
+.body{
+    background-color: #000;
+}
+
 .Games{
   width: 100%;
   display: flex;
@@ -5,22 +9,14 @@
   justify-content: center;
 }
 
-.Containerimg{
-    width: 50%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
 .img{
     width: 80%;
-    height: 80%;
-    background-color: aliceblue;
+    height: 60%;
     border-radius: 10px;
     background-size: cover;
-    background-image: url(https://i.ytimg.com/vi/0IJF5HczQoU/maxresdefault.jpg);
+    background-repeat: no-repeat;
+    background-image: url(https://th.bing.com/th/id/OIP.uSM4geuDZP5AdlIaiEIdjwHaEK?rs=1&pid=ImgDetMain);
+    background-color: aliceblue;
 }
 
 .detalhe{
@@ -28,6 +24,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 85vh;
 }
 
 .itens{
@@ -38,21 +36,30 @@
 }
 
 .txt{
-
     margin-top: 1rem;
+    font-size: 16px;
+    color: #ffff;
+
+}
+
+.txtTl{
+    font-size: 38px;
+    color: #ffff;
+
 }
 
 .btn{
     margin-top: 2rem;
 }
 
-/* From Uiverse.io by barisdogansutcu */ 
+
 .button {
     padding: 17px 40px;
     border-radius: 50px;
     cursor: pointer;
+    color: #ffff;
     border: 0;
-    background-color: rgb(29, 25, 25);
+    background-color: rgb(51, 49, 49);
     box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;

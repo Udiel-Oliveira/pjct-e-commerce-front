@@ -21,38 +21,35 @@ const DetailPageContent = () => {
   }
 
   return (
-    <div>
+    <div className={Styles.body}>
       <NavBar />
       <div className={Styles.Games}>
-        <div className={Styles.Containerimg} id="img">
+        <div className={Styles.detalhe} id="img">
           <div className={Styles.img}></div>
         </div>
 
         <div className={Styles.detalhe}>
           
-          <div>
+          
           <div className={Styles.itens}>
-          <h1>{title}</h1>
+          <h1 className={Styles.txtTl}>{title}</h1>
             
-            <p className={Styles.txt}></p>
+            <p className={Styles.txt}>
             {description}
 
+            </p>
+           
           <p className={Styles.txt}>
             <strong>Preço:</strong>{' '}
             {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(price))}
           </p>
-          <div className={Styles.btn}>
-    
-<button className={Styles.button}>Comprar</button>
+
+
+          <div className={Styles.btn}><button className={Styles.button}>Comprar</button></div>
 
           </div>
-        
-       
 
-         
-          </div>
-
-          </div>
+          
 
          
         </div>
