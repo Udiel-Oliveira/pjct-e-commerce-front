@@ -31,7 +31,7 @@ export default function Footer() {
 
           <div className={styles.itens}>
             
-            <h6>Todos os direitos reservados a <Link href="https://kumstore.vercel.app/">GenTix Store - 2024</Link></h6>
+            <h6 className={styles.color}>Todos os direitos reservados a <Link href="https://kumstore.vercel.app/">GenTix Store - 2024</Link></h6>
             <Link href="https://github.com/Udiel-Oliveira/pjct-e-commerce-front" target="_blank"><FontAwesomeIcon icon={faGithub} className={styles.icon} /></Link>
             
             
