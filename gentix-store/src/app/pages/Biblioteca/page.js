@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.corpo}>
       <NavBar />
       <div className={styles.page}>
         <h4 className={styles.title}>Meus Jogos</h4>
@@ -35,7 +35,7 @@ export default function Home() {
               </div>
             ))
           ) : (
-            <p>Nenhum jogo na biblioteca ainda.</p>
+            <p>Nenhum jogo na biblioteca ainda </p>
           )}
         </div>
       </div>
