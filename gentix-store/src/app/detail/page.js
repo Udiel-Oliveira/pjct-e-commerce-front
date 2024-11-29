@@ -21,17 +21,33 @@ const DetailPageContent = () => {
   const handleBuy = () => {
     const purchasedDate = new Date().toLocaleDateString();
 
+
     const existingGames = JSON.parse(localStorage.getItem('library')) || [];
 
-   
+  
     const newGame = { id, title, description, price, purchasedDate };
     const updatedGames = [...existingGames, newGame];
 
-   
+  
     localStorage.setItem('library', JSON.stringify(updatedGames));
 
-    
+
     alert(`${title} foi adicionado à sua biblioteca!`);
+
+
+    const fileUrl = "/uploads/Mochi's_Quest.exe"; 
+    const fileName = "MochisQuest";
+
+  
+    const link = document.createElement("a");
+    link.href = fileUrl; 
+    link.download = fileName;
+    link.style.display = "none";
+
+ 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -54,7 +70,7 @@ const DetailPageContent = () => {
             </p>
             <div className={Styles.btn}>
               <button className={Styles.button} onClick={handleBuy}>
-                Adiquirir
+                Adquirir
               </button>
             </div>
           </div>

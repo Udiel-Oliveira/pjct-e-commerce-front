@@ -2,6 +2,7 @@
 {
     display: flex;
     height: 100%;
+    color: #fff;
     width: 100%;
     background-color: #000;
     background-image: url(/assets/background.svg);
@@ -159,3 +160,15 @@
     flex-direction: column;
     animation: aparecer2 2s linear ;
 }
+
+/*
+Erro de carregar dados 
+    background: #f8f8a1;
+    color: #5c5c1a;
+    padding: 0.75rem;
+    left: 50%;
+    top: 1%;
+    position: absolute;
+    border-radius: 10px;
+
+*/

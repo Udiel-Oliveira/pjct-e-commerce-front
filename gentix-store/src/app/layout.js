@@ -1,5 +1,6 @@
 import "./globals.css";
 import { GamesProvider } from '../app/context/GamesContext';
+import { AuthProvider } from "./context/AuthContext";
 
 export const metadata = {
   title: "KumStore",
@@ -10,9 +11,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt">
       <body>
-        <GamesProvider>
-        {children}
-        </GamesProvider>
+        <AuthProvider>
+          <GamesProvider>
+          {children}
+          </GamesProvider>
+        </AuthProvider>
       </body>
     </html>
   );

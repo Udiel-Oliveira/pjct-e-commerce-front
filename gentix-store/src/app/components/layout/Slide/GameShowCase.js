@@ -104,36 +104,36 @@ const GameShowcase = ({ games }) => {
       >
         {games.map((game, index) => (
           <SwiperSlide key={game.id || index} className={styles.swiperSlide}>
-            <Link
-              href={{
-                pathname: '/detail', // Corrigido para o caminho correto da página de detalhes
-                query: {
-                  id: game.id,
-                  title: game.title,
-                  description: game.description,
-                  price: game.price,
-                },
-              }}
-              className={styles.gameLink}
-            >
-              <div className={styles.gameCard}>
-                <div
-                  className={styles.gameImg}
-                  style={{
-                    backgroundImage: `url(${game.backgroundImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                >
-                  {game.tags1 && <span className={styles.tags}>{game.category}</span>}
-                </div>
-                <div className={styles.infoCard}>
-                  <h2>{game.title}</h2>
-                  <span className={styles.price}>{formatPrice(game.price)}</span>
-                </div>
+          <Link
+            href={{
+              pathname: '/detail',
+              query: {
+                id: game.id,
+                title: game.title,
+                description: game.description,
+                price: game.price,
+              },
+            }}
+            className={styles.gameLink}
+          >
+            <div className={styles.gameCard}>
+              <div
+                className={styles.gameImg}
+                style={{
+                  backgroundImage: `url(${game.backgroundImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                {game.category && <span className={styles.tags}>{game.category}</span>}
               </div>
-            </Link>
-          </SwiperSlide>
+              <div className={styles.infoCard}>
+                <h2>{game.title}</h2>
+                <span className={styles.price}>{formatPrice(game.price)}</span>
+              </div>
+            </div>
+          </Link>
+        </SwiperSlide>
         ))}
       </Swiper>
     </div>

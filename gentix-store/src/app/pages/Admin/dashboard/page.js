@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DashboardButton from '@/app/components/layout/Dashboard/DashboardBtn';
 import { faArrowRight, faBuilding, faGamepad, faSitemap } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { useGames } from '@/app/context/GamesContext';
 import { EntityTable } from '@/app/components/layout/Tables/EntidadeTable';
 import { useEntityData } from '@/app/hooks/useEntidadeData';
 import Loading from '@/app/components/Load';
@@ -60,8 +59,8 @@ export default function Dashboard() {
           </div>
           
           <div className={styles.btnContainer}>
-            <DashboardButton titulo={"CATEGORIAS"} icon={faSitemap} />
-            <DashboardButton titulo={"EMPRESA"} icon={faBuilding}/>
+            <DashboardButton titulo={"CATEGORIAS"} icon={faSitemap} link='AdicionarCategoria' />
+            <DashboardButton titulo={"EMPRESA"} icon={faBuilding} link='AdicionarEmpresa'/>
             <DashboardButton titulo={"JOGOS"}  icon={faGamepad} link='AdicionarJogos'/>
           </div>
           <div className={styles.tables}>
