@@ -39,7 +39,9 @@ const DetailPageContent = () => {
       <NavBar />
       <div className={Styles.Games}>
         <div className={Styles.detalhe} id="img">
-          <div className={Styles.img}></div>
+          <div className={Styles.img}>
+            <img src="https://th.bing.com/th/id/OIP.PLXmY8mpQyX55a01i3SMEgHaEo?w=277&h=180&c=7&r=0&o=5&pid=1.7  " className={Styles.gameIMG}></img>
+          </div>
         </div>
 
         <div className={Styles.detalhe}>
