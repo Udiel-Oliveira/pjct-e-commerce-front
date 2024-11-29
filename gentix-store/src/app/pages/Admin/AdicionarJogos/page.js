@@ -26,7 +26,7 @@ export default function AddJogos() {
       const formData = new FormData();
       formData.append("file", gameData.image); // Arquivo da imagem.
 
-      const response = await fetch(`https://pjct-e-commerce-back.onrender.com/api/gameimage/?game=${gameData.id}`, {
+      const response = await fetch(`http://localhost:8080/api/gameimage/?game=${gameData.id}`, {
         method: 'POST',
         body: formData,
       });
@@ -72,7 +72,7 @@ export default function AddJogos() {
         updateDate: new Date().toISOString(),
       };
 
-      const response = await fetch('https://pjct-e-commerce-back.onrender.com/api/game/', {
+      const response = await fetch('http://localhost:8080/api/game/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

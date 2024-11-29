@@ -89,7 +89,7 @@ export function GameForm({ marks, categories, onSubmit, onFormChange }) {
       };
   
       // Criar o jogo primeiro
-      const gameResponse = await fetch('https://pjct-e-commerce-back.onrender.com/api/game/', {
+      const gameResponse = await fetch('http://localhost:8080/api/game/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ export function GameForm({ marks, categories, onSubmit, onFormChange }) {
         console.log('Dados do FormData:', formData.get('file'));
 
         const imageResponse = await fetch(
-          `https://pjct-e-commerce-back.onrender.com/api/gameimage/?game=${createdGame.id}`,
+          `http://localhost:8080/api/gameimage/?game=${createdGame.id}`,
           {
             method: 'POST',
             body: formData,

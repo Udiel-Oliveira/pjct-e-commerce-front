@@ -9,7 +9,7 @@ export function GamesProvider({ children }) {
 
   const updateGames = async () => {
     try {
-      const response = await fetch('https://pjct-e-commerce-back.onrender.com/api/gameimage/');
+      const response = await fetch('http://localhost:8080/gameimage/');
       if (response.ok) {
         const data = await response.json();
         const normalizedData = data.map((item) => ({
@@ -19,7 +19,7 @@ export function GamesProvider({ children }) {
           price: item.game.price,
           category: item.game.category.name,
           mark: item.game.mark.name,
-          backgroundImage: item.url, // Ou ajuste se o campo correto for diferente
+          backgroundImage: item.url, 
         }));
         setGames(normalizedData);
       }
