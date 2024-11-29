@@ -35,7 +35,7 @@ export default function HomePage() {
     loadGames();
   }, [updateGames]);
 
-  const carouselGames = games?.slice(5, 10) || [];
+  const carouselGames = games?.slice(0, 5) || [];
   const showcaseGames = games?.slice(0) || [];
 
   if (isLoading) {
@@ -69,17 +69,19 @@ export default function HomePage() {
           className={styles.mySwiper}
         >
           {carouselGames.map((game, index) => (
-            <SwiperSlide key={game?.id || index} className={styles.SwiperSlide}
-            style={{ backgroundImage: `url(${games.backgroundImage})` }}
-            >
-              <GameSlide
-                title={game?.title}
-                description={game?.description}
-                price={game?.price}
-                mark={game?.mark?.name}
-                category={game?.category?.name}
-              />
-            </SwiperSlide>
+            <SwiperSlide 
+            key={game?.id || index} 
+            className={styles.SwiperSlide}
+            style={{ backgroundImage: `url(${game?.backgroundImage})` }}
+          >
+            <GameSlide
+              title={game?.title}
+              description={game?.description}
+              price={game?.price}
+              mark={game?.mark?.name}
+              category={game?.category?.name}
+            />
+          </SwiperSlide>
           ))}
         </Swiper>
       </div>
