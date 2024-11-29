@@ -13,6 +13,7 @@ const DetailPageContent = () => {
   const title = searchParams.get('title');
   const description = searchParams.get('description');
   const price = searchParams.get('price');
+  const image = searchParams.get('image');  // Pegando a URL da imagem
 
   if (!id) {
     return <p>Carregando informações...</p>;
@@ -21,30 +22,21 @@ const DetailPageContent = () => {
   const handleBuy = () => {
     const purchasedDate = new Date().toLocaleDateString();
 
-
     const existingGames = JSON.parse(localStorage.getItem('library')) || [];
-
-  
     const newGame = { id, title, description, price, purchasedDate };
     const updatedGames = [...existingGames, newGame];
-
-  
     localStorage.setItem('library', JSON.stringify(updatedGames));
 
-
     alert(`${title} foi adicionado à sua biblioteca!`);
-
 
     const fileUrl = "/uploads/Mochi's_Quest.exe"; 
     const fileName = "MochisQuest";
 
-  
     const link = document.createElement("a");
-    link.href = fileUrl; 
+    link.href = fileUrl;
     link.download = fileName;
     link.style.display = "none";
 
- 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -54,9 +46,9 @@ const DetailPageContent = () => {
     <div className={Styles.body}>
       <NavBar />
       <div className={Styles.Games}>
-        <div className={Styles.detalhe} id="img">
+        <div className={Styles.detalhe}>
           <div className={Styles.img}>
-            <img src="https://th.bing.com/th/id/OIP.PLXmY8mpQyX55a01i3SMEgHaEo?w=277&h=180&c=7&r=0&o=5&pid=1.7  " className={Styles.gameIMG}></img>
+            <img src={image} className={Styles.gameIMG} id="img" alt={title} />  {/* Exibindo a imagem */}
           </div>
         </div>
 
