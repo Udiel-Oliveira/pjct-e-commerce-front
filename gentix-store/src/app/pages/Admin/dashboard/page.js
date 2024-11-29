@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DashboardButton from '@/app/components/layout/Dashboard/DashboardBtn';
 import { faArrowRight, faBuilding, faGamepad, faSitemap } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { useGames } from '@/app/context/GamesContext';
 import { EntityTable } from '@/app/components/layout/Tables/EntidadeTable';
 import { useEntityData } from '@/app/hooks/useEntidadeData';
 import Loading from '@/app/components/Load';

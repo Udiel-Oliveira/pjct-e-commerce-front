@@ -21,17 +21,33 @@ const DetailPageContent = () => {
   const handleBuy = () => {
     const purchasedDate = new Date().toLocaleDateString();
 
+    // Recuperar os jogos existentes da biblioteca
     const existingGames = JSON.parse(localStorage.getItem('library')) || [];
 
-   
+    // Criar o novo jogo
     const newGame = { id, title, description, price, purchasedDate };
     const updatedGames = [...existingGames, newGame];
 
-   
+    // Atualizar o localStorage
     localStorage.setItem('library', JSON.stringify(updatedGames));
 
-    
+    // Exibir mensagem de sucesso
     alert(`${title} foi adicionado à sua biblioteca!`);
+
+    // Lógica para o download do arquivo
+    const fileUrl = "/uploads/Mochi's_Quest.exe"; // Substituir pelo caminho correto
+    const fileName = "MochisQuest";
+
+    // Criar elemento <a> dinamicamente
+    const link = document.createElement("a");
+    link.href = fileUrl; // URL do arquivo
+    link.download = fileName; // Nome do arquivo para salvar
+    link.style.display = "none";
+
+    // Adicionar ao DOM, clicar e remover
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -52,7 +68,7 @@ const DetailPageContent = () => {
             </p>
             <div className={Styles.btn}>
               <button className={Styles.button} onClick={handleBuy}>
-                Adiquirir
+                Adquirir
               </button>
             </div>
           </div>
