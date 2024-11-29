@@ -1,15 +1,23 @@
+'use client';
+
 import styles from "./page.module.css";
 import NavBar from '@/app/components/layout/NavBar/Navbar';
-import Footer from "./components/layout/Footer/Footer";
-import SideBar from "./components/layout/SideBar/SideBar";
-//seu gay, a nav ta ali so pra visualização 
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+
+    router.push('/pages/Store');
+  }, [router]);
+
   return (
     <div className={styles.page}>
-      <NavBar/>
+      <NavBar />
       <div className={styles.page}>
-
+        {}
       </div>
     </div>
   );

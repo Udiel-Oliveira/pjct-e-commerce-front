@@ -26,7 +26,7 @@ export default function NavBar() {
     <nav className={styles.nav}>
       <ul className={styles.list}>
         <li className={styles.logoContainer}>
-          <Link href="#" className={styles.logo} onClick={toggleSubMenu}>
+          <Link href="/pages/Store" className={styles.logo} onClick={toggleSubMenu}>
             <img src="/assets/logoHome.png" alt="" />
             <FontAwesomeIcon 
               icon={faCaretDown}
@@ -70,21 +70,7 @@ export default function NavBar() {
               </li>
             </ul>
           )}
-        </li>
-
-        <li className={styles.link}>
-          <Link href="/" className={styles.linkItem}>
-            <div className={styles.iconConteiner}>
-              <FontAwesomeIcon icon={faXbox} className={`${styles.linkIcons} ${currentRoute === '/' ? styles.activeLink : ''}`}/>
-              {currentRoute === '/' && (
-                <span className={styles.activeDot}></span>
-              )}
-            </div>
-            Jogos
-          </Link>
-        </li>
-
-      
+        </li>    
       </ul>
 
       <div className={styles.user}>
@@ -106,10 +92,10 @@ export default function NavBar() {
             Biblioteca
           </Link>
         </div>
-
-        <Link className={styles.userImage} href="/pages/SignUp">
-          <FontAwesomeIcon icon={faUser} style={{ width: '23px', height: '23px' }} />
-        </Link>
+        
+          <Link className={styles.userImage} href="/pages/SignUp">
+            <FontAwesomeIcon icon={faUser} style={{ width: '23px', height: '23px' }} />
+          </Link>
       </div>
     </nav>
   );
